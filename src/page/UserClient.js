@@ -1,3 +1,5 @@
+const cheerio = require("cheerio");
+
 /**
  * UserList* （ユーザ名簿） ページの情報を JavaScript オブジェクトとして取得する。
  *
@@ -27,7 +29,7 @@ export default class UserClient {
     };
 
     const document = this._transport.get(query);
-    const $ = Cheerio.load(document);
+    const $ = cheerio.load(document);
 
     return $("table.dataList tr > td:nth-child(1)  a")
       .map((i, elem) => {

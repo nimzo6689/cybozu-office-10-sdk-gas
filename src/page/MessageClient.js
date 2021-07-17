@@ -1,3 +1,5 @@
+const cheerio = require("cheerio");
+
 /**
  * MyFolderMessage* （個人フォルダ内のメッセージ） ページの情報を JavaScript オブジェクトとして取得する。
  *
@@ -271,7 +273,7 @@ export default class MessageClient {
     };
 
     const document = this._transport.get(query);
-    const $ = Cheerio.load(document);
+    const $ = cheerio.load(document);
 
     return $('select[name="UID"] > option')
       .map((i, elem) => {
