@@ -6,12 +6,20 @@
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nimzo6689/cybozu-office-10-sdk-gas.git"
+  },
   "keywords": [
     "google",
     "gas"
   ],
   "author": "nimzo6689",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nimzo6689/cybozu-office-10-sdk-gas/issues"
+  },
+  "homepage": "https://github.com/nimzo6689/cybozu-office-10-sdk-gas#readme",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
