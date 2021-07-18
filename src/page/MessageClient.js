@@ -101,30 +101,27 @@ export default class MessageClient {
     }
 
     const document = this._transport.get(query);
-    const rawfollows = document.toString().match(/(?<=vr_followWrapper).*?(?=followMenu)/gis);
+    const $ = cheerio.load(document);
 
-    if (!rawfollows) {
-      return null;
-    }
-    return rawfollows.map(this._toFollowModel);
-  }
+    return $('#Follows > div')
+      .map((i, el) => {
+        const parsed = $(el);
 
-  _toFollowModel(rawHtml) {
-    const followId = Number(rawHtml.match(/(?<=follow-root-)[0-9]+/i)[0]);
-    const userName = rawHtml.match(/(?<=vr_followUserName.*?>).*?(?=<\/span>)/is)[0];
-    let attached = rawHtml.match(/(?<=<td nowrap>.*?<a href=").*?(?=">)/is);
-    let _, attachedFile, attachedQuery;
-    if (attached) {
-      [_, attachedFile, attachedQuery] = attached[0].split(/[/?]/);
-      attachedQuery = attachedQuery.replace(/&amp;/gi, '&');
-    }
+        const attached = parsed.find('.vr_viewContentsAttach a').attr('href');
+        let _, attachedFile, attachedQuery;
+        if (attached) {
+          [_, attachedFile, attachedQuery] = attached[0].split(/[/?]/);
+          attachedQuery = attachedQuery.replace(/&amp;/gi, '&');
+        }
 
-    return {
-      followId: followId,
-      userName: userName,
-      attachedFile: attachedFile,
-      attachedQuery: attachedQuery,
-    };
+        return {
+          followId: Number(parsed.attr('id').match(/(?<=follow-root-)[0-9]+/i)[0]),
+          userName: parsed.find('.vr_followUserName').text(),
+          attachedFile: attachedFile,
+          attachedQuery: attachedQuery,
+        };
+      })
+      .toArray();
   }
 
   /**
