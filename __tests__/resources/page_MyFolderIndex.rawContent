@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>個人フォルダ - サイボウズ Office</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="stylesheet" type="text/css" href="/cb1080/html/std.css?_v=1085120210203114957.css" />
+<link rel="stylesheet" type="text/css" href="/cb1080/html/yui/menu/assets/menu.css?_v=1085120210203114957.css" />
+<link rel="stylesheet" type="text/css" href="/cb1080/html/yui/container/assets/container.css?_v=1085120210203114957.css" />
+<link rel="stylesheet" type="text/css" href="/cb1080/html/dialog.css?_v=1085120210203114957.css" />
+<link rel="stylesheet" type="text/css" href="/cb1080/html/header.css?_v=1085120210203114957.css" />
+<link rel="stylesheet" type="text/css" href="/cb1080/html/trialbutton.css?_v=1085120210203114957.css" />
+<link rel="stylesheet" id="designcss" type="text/css" href="/cb1080/html/std-varaha/std-varaha.css?_v=1085120210203114957.css" />
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/jquery/jquery.min.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/yui/utilities/utilities.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/std.js?_v=1085120210203114957.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+CB7.Init( "MyFolderIndex", "ts.1626590851" );
+CB7.HTM_PATH = "/cb1080/html";
+CB7.IMG_PATH = "/cb1080/image";
+CB7.FORM_KEY = "a2deb79d845fc0a093628d3e9c1f1c1e";
+CB7.PRODUCT_TITLE = "サイボウズ Office";
+CB7.LOGIN_ID = "17";
+CB7.BUILD_VERSION = "1085120210203114957";
+g_strImgPath = "/cb1080/image";
+g_bHeadbarFix = true;
+//--></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/dom.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/spinner.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/form.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/image.js?_v=1085120210203114957.js"></script>
+<link href="/cb1080/image/cybozuoffice.ico" rel="shortcut icon">
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+         dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5N49D3');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5N49D3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript"><!--
+YAHOO.util.Event.on( document, "click", CB7.AutoHideMenu.HideAll );
+//--></script>
+</head>
+<body>
+<div class="trialLinkWrapper">
+ <a class="trialLink" href="https://office.cybozu.co.jp/trial/cloud/office/?utm_source=onlinedemo&utm_medium=referral&utm_campaign=hover
+ " target="_blank" >30日間無料で試用する</a>
+</div>
+<div id="headbar-wrapper" class="vr_headbarFix">
+ <div id="headbar" class="headbar">
+ <table id="headerTable" class="layout" width="100%" role="presentation">
+ <colgroup width="1">
+ <colgroup width="1%">
+ <colgroup width="200px">
+ <colgroup width="">
+ <tr>
+ <td class="vr_logo" nowrap><h1 class="visuallyHidden">サイボウズ Office</h1><a href="ag.cgi?page=AGIndex"><img src="/cb1080/image/logo_hd.png" alt="トップページ"></a>
+ </td>
+ <td class="vr_headerNotifireList" nowrap><ul>
+</ul>
+ </td>
+ <td class="vr_headbarSearch" nowrap>
+<form method="get" name="headbarSearchForm" action="ag.cgi?" style="display:inline;">
+ <input type="hidden" name="page"   value="AGSimpleSearch">
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/search.js?_v=1085120210203114957.js"></script>
+ <table class="vr_headbarSearchArea">
+ <tr>
+ <td class="vr_headbarSearchTdInput">
+ <input type="text" name="Text" id="searchText" onfocus="CB7.HeaderSearchToggle.ClearPlaceholder();" onblur="CB7.HeaderSearchToggle.ShowPlaceholder();" class="vr_headerSearchText vr_placeholder" value="" maxlength="100">
+ </td>
+ <td class="vr_headbarSearchTdButton">
+ <input type="submit" class="vr_headerSearchButton" value="" alt="検索" title="検索" onclick="CB7.HeaderSearchToggle.ClearPlaceholder();">
+<script language="JavaScript" type="text/javascript">
+<!--
+CB7.HeaderSearchToggle.Initialize( '製品内を検索', 'searchText', 'vr_placeholder' );
+CB7.HeaderSearchToggle.TogglePlaceholder();
+//-->
+</script>
+ </td>
+ </tr>
+ </table>
+ </form>
+ </td>
+ <td class="vr_menu">
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/yui/container/container-min.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/yui/menu/menu-min.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/dialog.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/headermenu.js?_v=1085120210203114957.js"></script>
+<script language="JavaScript" type="text/javascript"><!--//
+CB7.HeaderMenu.Dialog.LINK_URL = "ag.cgi?page=AjaxXHRLinkDialog";
+//--></script>
+<div id="headermenu" class="yuimenubar">
+ <div class="bd clearfix">
+ <ul class="first-of-type headermenutip">
+ <li id="header-menu-notification" class="yuimenubaritem vr_headerMenuNotification">
+ <a href="ag.cgi?page=NotificationIndex" class="yuimenubaritemlabel"><img class="comHeaderMenuImage vr_notificationImage" src="/cb1080/image/comHeader_bell.png" alt="通知一覧"></a>
+ </li>
+ <li id="header-menu-application" class="yuimenubaritem vr_headerMenuApp">
+ <a href="javascript:void(0)" class="yuimenubaritemlabel"><span class="yuimenubaritemlabelinner">アプリ一覧<span class="yuimenubaritemlabelinnerArrow"></span></span></a>
+ <div id="applicationmenu" class="headersubmenu yuimenu" style="visibility:hidden;">
+ <div class="bd">
+ <ul>
+ <li id="headermenuAppBox">
+ <span id="headermenuAppItem" class="vr_headerAppMenu">
+<span class="appMenuItem"><a href="ag.cgi?page=AGIndex"><span class="appmenucss appMenuAGIndex"></span><br><span class="vr_naviAppMenu">トップページ</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=MyFolderIndex"><span class="appmenucss appMenuMyFolderIndex"></span><br><span class="vr_naviAppMenu">個人フォルダ</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=MailIndex"><span class="appmenucss appMenuMailIndex"></span><br><span class="vr_naviAppMenu">メール</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=ScheduleIndex"><span class="appmenucss appMenuScheduleIndex"></span><br><span class="vr_naviAppMenu">スケジュール</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=ScheduleIndex&amp;gid=fh"><span class="appmenucss appMenuScheduleFacility"></span><br><span class="vr_naviAppMenu">施設予約</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=WhereIndex"><span class="appmenucss appMenuWhereIndex"></span><br><span class="vr_naviAppMenu">電話メモ（在席確認）</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=TimeCardIndex"><span class="appmenucss appMenuTimeCardIndex"></span><br><span class="vr_naviAppMenu">タイムカード</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=ToDoIndex"><span class="appmenucss appMenuToDoIndex"></span><br><span class="vr_naviAppMenu">ToDoリスト</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=BulletinIndex"><span class="appmenucss appMenuBulletinIndex"></span><br><span class="vr_naviAppMenu">掲示板</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=FileIndex"><span class="appmenucss appMenuFileIndex"></span><br><span class="vr_naviAppMenu">ファイル管理</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=AddressIndex"><span class="appmenucss appMenuAddressIndex"></span><br><span class="vr_naviAppMenu">アドレス帳</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=UserListIndex"><span class="appmenucss appMenuUserListIndex"></span><br><span class="vr_naviAppMenu">ユーザー名簿</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=WorkFlowIndex"><span class="appmenucss appMenuWorkFlowIndex"></span><br><span class="vr_naviAppMenu">ワークフロー</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=ReportIndex"><span class="appmenucss appMenuReportIndex"></span><br><span class="vr_naviAppMenu">報告書</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=ProjectIndex"><span class="appmenucss appMenuProjectIndex"></span><br><span class="vr_naviAppMenu">プロジェクト</span></a></span>
+<span class="appMenuItem"><a href="https://office.cybozu.co.jp/trial/cloud/office/?utm_source=onlinedemo&amp;utm_medium=referral&amp;utm_campaign=appmenu"><img class="appmenuimg" src="ag.cgi?page=OfficeDownload&amp;notimecard=1&amp;type=image&amp;subtype=png&amp;id=187&amp;ct=1&amp;v=1573810718&amp;width=32&amp;height=32&amp;ext=.png" alt="30日間お試し" height="32" width="32" border="0"><br><span class="vr_naviAppMenu">30日間お試し</span></a></span>
+<span class="appMenuItem"><a href="ag.cgi?page=DBIndex"><span class="appmenucss appMenuDBIndex"></span><br><span class="vr_naviAppMenu">カスタムアプリ</span></a></span>
+<span class="appMenuItem "><a href="ag.cgi?page=DBView&did=43"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=43&amp;ct=1&amp;v=1316877727&amp;width=32&amp;height=32&amp;ext=.png" alt="クレーム管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">クレーム管理</span></a></span>
+<span class="appMenuItem "><a href="ag.cgi?page=DBView&did=50"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=50&amp;ct=1&amp;v=1316878244&amp;width=32&amp;height=32&amp;ext=.png" alt="契約書管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">契約書管理</span></a></span>
+<span class="appMenuItem "><a href="ag.cgi?page=DBView&did=57"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=57&amp;ct=1&amp;v=1335938580&amp;width=32&amp;height=32&amp;ext=.png" alt="障害対応依頼" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">障害対応依頼</span></a></span>
+<span class="appMenuItem "><a href="ag.cgi?page=DBView&did=84"><img class="appmenuimg" src="/cb1080/image/customapp32_16.png" alt="共有ToDo" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">共有ToDo</span></a></span>
+<span class="appMenuItem "><a href="ag.cgi?page=DBView&did=102"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=102&amp;ct=1&amp;v=1371429444&amp;width=32&amp;height=32&amp;ext=.png" alt="見積り依頼受付" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">見積り依頼受付</span></a></span>
+<span class="appMenuItem "><a href="ag.cgi?page=DBView&did=116"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=116&amp;ct=1&amp;v=&amp;width=32&amp;height=32&amp;ext=.png" alt="商談進捗管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">商談進捗管理</span></a></span>
+<span class="appMenuItem "><a href="ag.cgi?page=DBView&did=124"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=124&amp;ct=1&amp;v=&amp;width=32&amp;height=32&amp;ext=.png" alt="共有タスク管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">共有タスク管理</span></a></span>
+<span class="appMenuItem appMenuItemNew"><a href="ag.cgi?page=DBView&did=126"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=126&amp;ct=1&amp;v=&amp;width=32&amp;height=32&amp;ext=.png" alt="商談進捗管理(商談進捗パック)" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">商談進捗管理(商談進捗パック)</span></a></span>
+ </span>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </li>
+ <li id="header-menu-linklist" class="yuimenubaritem vr_headerMenuLink">
+ <a href="javascript:void(0)" class="yuimenubaritemlabel"><span class="yuimenubaritemlabelinner">リンク<span class="yuimenubaritemlabelinnerArrow"></span></span></a>
+ <div id="linklistmenu" class="headersubmenu yuimenu" style="visibility:hidden;">
+ <div class="bd" cb7page="AjaxXHRHeaderSubMenu" cb7query="method=LinkList" cb7state="complete">
+<ul class="first-of-type">
+ <li class="yuimenuitem"><a class="yuimenuitemlabel" href="javascript:void(0);" onclick="CB7.HeaderMenu.Dialog.Open('link');"><img src="/cb1080/image/write16.png" align=absmiddle>この画面を追加する</a></li>
+ <li class="yuimenuitem"><a class="yuimenuitemlabel" href="javascript:void(0);" onclick="CB7.HeaderMenu.Dialog.Open('link',0,{appId:'',iconId:''});"><img src="/cb1080/image/write16.png" align=absmiddle>新規作成する</a></li>
+<li class="yuimenuitem headermenuSep">&nbsp;</li>
+ <li class="yuimenuitem"><a class="yuimenuitemlabel" href="ag.cgi?page=LinkIndex&cid=216"><img src="/cb1080/image/node16.png" align=absmiddle>（カスタムアプリ）</a>
+ <div class="yuimenu">
+ <div class="bd">
+<ul>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.exe?page=DBIndex&amp;ID=60"><img src="/cb1080/image/dz_db16.png" align=absmiddle style="width:16px; height:16px;">カスタムアプリ利用例　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+</ul>
+ </div>
+ </div>
+ </li>
+<li class="yuimenuitem headermenuSep">&nbsp;</li>
+ <li class="yuimenuitem"><a class="yuimenuitemlabel" href="ag.cgi?page=LinkIndex&type=system"><img src="/cb1080/image/node16.png" align=absmiddle>共有リンク集</a>
+ <div class="yuimenu">
+ <div class="bd">
+<ul>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="http://products.cybozu.co.jp/office/"><img src="/cb1080/image/listmark16.png" align=absmiddle>サイボウズ Office 10 Webサイト　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="http://faq.cybozu.info/alphascope/cybozu/web/office10/Search.aspx"><img src="/cb1080/image/listmark16.png" align=absmiddle>よくある質問と答え　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="https://officetimeline.cybozu.co.jp/"><img src="/cb1080/image/listmark16.png" align=absmiddle>サイボウズ Officeタイムライン　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="http://cybozu.co.jp/community/"><img src="/cb1080/image/listmark16.png" align=absmiddle>サイボウズコミュニティ　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="http://manual.cybozu.co.jp/of10/"><img src="/cb1080/image/listmark16.png" align=absmiddle>オンラインマニュアル　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+</ul>
+ </div>
+ </div>
+ </li>
+<li class="yuimenuitem headermenuSep">&nbsp;</li>
+ <li class="yuimenuitem"><a class="yuimenuitemlabel" href="ag.cgi?page=PersonalStartMenuAdmin"><img src="/cb1080/image/node16.png" align=absmiddle>始めるメニュー</a>
+ <div class="yuimenu">
+ <div class="bd">
+<ul>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=MyFolderMessageSend"><img src="/cb1080/image/msg16.png" align=absmiddle>メッセージを送る　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=MailSend"><img src="/cb1080/image/mail16.png" align=absmiddle>メールを送る　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=MyFolderMemoAdd"><img src="/cb1080/image/memo16.png" align=absmiddle>メモを書く　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=ToDoEntry"><img src="/cb1080/image/todo16.png" align=absmiddle>ToDoを追加する　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=WorkFlowSend"><img src="/cb1080/image/workflow16.png" align=absmiddle>申請する　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem headermenuSep">&nbsp;</li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=BulletinSend"><img src="/cb1080/image/bulletin16.png" align=absmiddle>掲示を書き込む　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=AddressEntry"><img src="/cb1080/image/address16.png" align=absmiddle>アドレスを登録する　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=ReportSend"><img src="/cb1080/image/report16.png" align=absmiddle>報告書を作成する　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem headermenuSep">&nbsp;</li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=ScheduleEntry"><img src="/cb1080/image/schedule16.png" align=absmiddle>予定を登録する　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem"><a class="yuimenuitemlabel haspopup" href="ag.cgi?page=ScheduleAdjust"><img src="/cb1080/image/adjust16.png" align=absmiddle>予定を調整する　<img class="popupicon" src="/cb1080/image/popup16.png" align=absmiddle></a></li>
+<li class="yuimenuitem headermenuSep">&nbsp;</li>
+</ul>
+ </div>
+ </div>
+ </li>
+</ul>
+ </div>
+ </div>
+ </li>
+ <li id="header-menu-user" class="yuimenubaritem first-of-type vr_headerMenuUser">
+ <a href="javascript:void(0)" class="yuimenubaritemlabel"><img class="profileImage" src="/cb1080/image/comHeader_defaulticon_small.png"><span class="yuimenubaritemlabelinner">高橋 健太<span class="yuimenubaritemlabelinnerArrow"></span></span></a>
+ <div id="usermenu" class="headersubmenu yuimenu" style="visibility:hidden;">
+ <div class="bd">
+ <span class="vr_headerUserImage"><img class="profileImage" src="/cb1080/image/comHeader_defaulticon.png">
+</span>
+ <ul>
+ <li class="yuimenuitem vr_headerAccount"><a href="ag.cgi?page=UserListView&uid=17">高橋 健太</a></li>
+ <li class="yuimenuitem vr_headerAccount"><a href="ag.cgi?page=PersonalUser">編集</a></li>
+ <li class="yuimenuitem headermenuSep">&nbsp;</li>
+ <li class="yuimenuitem"><a class="vr_headerPersonalSettings" href="ag.cgi?page=PersonalAdminMenu">個人設定</a></li>
+ <li class="yuimenuitem"><a href="ag.cgi?page=PersonalUserPassword">パスワードの変更</a></li>
+ <li class="yuimenuitem"><a href="ag.cgi?Page=PersonalDesign">デザインの変更</a></li>
+ <li class="yuimenuitem headermenuSep">&nbsp;</li>
+ <li class="yuimenuitem" style="display: none;"><a class="vr_headerTouchDesignCheckbox" href="javascript:void(0);" onclick="CB7.TouchDesign.ToggleSetting(this);">タッチモード</a></li>
+ <li class="yuimenuitem"><a  class="vr_headerSignageCheckbox" href="javascript:void(0);" onclick="CB7.Signage.Start();">全画面表示</a></li>
+ <li class="yuimenuitem headermenuSep">&nbsp;</li>
+ <li class="yuimenuitem"><a href="https://r.cybozu.com/o/of10/ja/of10/user/index.html" target="_blank">ヘルプ</a></li>
+<form method="post" id="topLogoutForm" name="topLogoutForm" action="ag.cgi?" style="display:inline;">
+<input type="hidden" name="csrf_ticket" value="a2deb79d845fc0a093628d3e9c1f1c1e">
+<input type="hidden" name="_System" value="Login"><input type="hidden" name="_Logout" value="ログアウト"></form> <li class="yuimenuitem"><a href="#" onclick="javascript:document.topLogoutForm.submit();">ログアウト</a></li>
+ </ul>
+ </div>
+ </div>
+ </li>
+ <li id="header-menu-admin" class="yuimenubaritem vr_headerMenuAdmin">
+ <a href="javascript:void(0)" class="yuimenubaritemlabel"><img src="/cb1080/image/comHeader_settings.png" alt="管理者メニュー"></a>
+ <div id="adminmenu" class="headersubmenu yuimenu" style="visibility:hidden;">
+ <div class="bd">
+ <ul>
+ <li class="yuimenuitem"><a href="ag.cgi?page=SystemAdminMenu">システム設定</a></li>
+ <li class="yuimenuitem headermenuSep">&nbsp;</li>
+ <li class="yuimenuitem"><a href="https://r.cybozu.com/o/of10/ja/of10/admin/index.html" target="_blank">管理者ヘルプ</a></li>
+ </ul>
+ </div>
+ </div>
+ </li>
+ </ul>
+ </div>
+</div>
+<script language="JavaScript" type="text/javascript"><!--//
+YAHOO.util.Event.onContentReady( 'headermenu', function(){
+ new CB7.HeaderMenu('headermenu', {
+ requesturl:'ag.cgi', position: 'static',
+ autosubmenudisplay: false, clicktohide: true, scrollincrement:3, lazyload:true
+ });
+});
+//--></script>
+<script language="JavaScript" type="text/javascript"><!--//
+(function(){ CB7.TouchDesign.Init(); })();
+//--></script>
+<script>CB7.Signage.Init("MyFolderIndex");</script>
+ </td>
+ </tr>
+ </table>
+ </div>
+</div>
+<script language="JavaScript" type="text/javascript"><!--//
+YAHOO.util.Event.onContentReady( 'headbar-wrapper', function(){
+ OnHashJump();
+ SetContentPaddingTop();
+ $(window).resize(function(){SetContentPaddingTop();});
+});
+//--></script>
+<div id="content-wrapper" class="vr_headbarFix">
+<div class="vr_themeHeaderWrapper">
+<div class="vr_themeHeader" id="vr_themeHeader"><div class="vr_themeHeaderLink1"></div><div class="vr_themeHeaderLink2"></div><div class="vr_themeHeaderLink3"></div></div>
+<div class="vr_themeHeaderOuterDivider"></div>
+<div id='appIconMenuFrame' style='overflow-y:hidden;'>
+<div class="vr_themeHeaderInnerDivider"></div>
+<div class="vr_naviAppMenu"><nav role="navigation"><ul class="naviAppMenuList">
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=AGIndex"><span class="appmenucss appMenuAGIndex"></span><br><span class="vr_naviAppMenu">トップページ</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=MyFolderIndex"><span class="appmenucss appMenuMyFolderIndex"></span><br><span class="vr_naviAppMenu">個人フォルダ</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=MailIndex"><span class="appmenucss appMenuMailIndex"></span><br><span class="vr_naviAppMenu">メール</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=ScheduleIndex"><span class="appmenucss appMenuScheduleIndex"></span><br><span class="vr_naviAppMenu">スケジュール</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=ScheduleIndex&amp;gid=fh"><span class="appmenucss appMenuScheduleFacility"></span><br><span class="vr_naviAppMenu">施設予約</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=WhereIndex"><span class="appmenucss appMenuWhereIndex"></span><br><span class="vr_naviAppMenu">電話メモ（在席確認）</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=TimeCardIndex"><span class="appmenucss appMenuTimeCardIndex"></span><br><span class="vr_naviAppMenu">タイムカード</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=ToDoIndex"><span class="appmenucss appMenuToDoIndex"></span><br><span class="vr_naviAppMenu">ToDoリスト</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=BulletinIndex"><span class="appmenucss appMenuBulletinIndex"></span><br><span class="vr_naviAppMenu">掲示板</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=FileIndex"><span class="appmenucss appMenuFileIndex"></span><br><span class="vr_naviAppMenu">ファイル管理</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=AddressIndex"><span class="appmenucss appMenuAddressIndex"></span><br><span class="vr_naviAppMenu">アドレス帳</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=UserListIndex"><span class="appmenucss appMenuUserListIndex"></span><br><span class="vr_naviAppMenu">ユーザー名簿</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=WorkFlowIndex"><span class="appmenucss appMenuWorkFlowIndex"></span><br><span class="vr_naviAppMenu">ワークフロー</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=ReportIndex"><span class="appmenucss appMenuReportIndex"></span><br><span class="vr_naviAppMenu">報告書</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=ProjectIndex"><span class="appmenucss appMenuProjectIndex"></span><br><span class="vr_naviAppMenu">プロジェクト</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="https://office.cybozu.co.jp/trial/cloud/office/?utm_source=onlinedemo&amp;utm_medium=referral&amp;utm_campaign=appmenu"><img class="appmenuimg" src="ag.cgi?page=OfficeDownload&amp;notimecard=1&amp;type=image&amp;subtype=png&amp;id=187&amp;ct=1&amp;v=1573810718&amp;width=32&amp;height=32&amp;ext=.png" alt="30日間お試し" height="32" width="32" border="0"><br><span class="vr_naviAppMenu">30日間お試し</span></a></span>
+</li>
+<li class="naviAppMenuListItem">
+<span class="appMenuItem"><a href="ag.cgi?page=DBIndex"><span class="appmenucss appMenuDBIndex"></span><br><span class="vr_naviAppMenu">カスタムアプリ</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem "><a href="ag.cgi?page=DBView&did=43"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=43&amp;ct=1&amp;v=1316877727&amp;width=32&amp;height=32&amp;ext=.png" alt="クレーム管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">クレーム管理</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem "><a href="ag.cgi?page=DBView&did=50"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=50&amp;ct=1&amp;v=1316878244&amp;width=32&amp;height=32&amp;ext=.png" alt="契約書管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">契約書管理</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem "><a href="ag.cgi?page=DBView&did=57"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=57&amp;ct=1&amp;v=1335938580&amp;width=32&amp;height=32&amp;ext=.png" alt="障害対応依頼" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">障害対応依頼</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem "><a href="ag.cgi?page=DBView&did=84"><img class="appmenuimg" src="/cb1080/image/customapp32_16.png" alt="共有ToDo" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">共有ToDo</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem "><a href="ag.cgi?page=DBView&did=102"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=102&amp;ct=1&amp;v=1371429444&amp;width=32&amp;height=32&amp;ext=.png" alt="見積り依頼受付" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">見積り依頼受付</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem "><a href="ag.cgi?page=DBView&did=116"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=116&amp;ct=1&amp;v=&amp;width=32&amp;height=32&amp;ext=.png" alt="商談進捗管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">商談進捗管理</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem "><a href="ag.cgi?page=DBView&did=124"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=124&amp;ct=1&amp;v=&amp;width=32&amp;height=32&amp;ext=.png" alt="共有タスク管理" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">共有タスク管理</span></a></span>
+</li>
+<li class="naviAppMenuListItem"><span class="appMenuItem appMenuItemNew"><a href="ag.cgi?page=DBView&did=126"><img class="appmenuimg" src="ag.cgi?page=DBIconDownload&amp;MainType=image&amp;SubType=png&amp;notimecard=1&amp;did=126&amp;ct=1&amp;v=&amp;width=32&amp;height=32&amp;ext=.png" alt="商談進捗管理(商談進捗パック)" width="32" height="32" align=absmiddle><br><span class="vr_naviAppMenu">商談進捗管理(商談進捗パック)</span></a></span>
+</li>
+</ul></nav></div></div>
+</div>
+<div><div id='appmenuToggler' class='appmenuExpand'><div class='appmenuToggleButton'></div></div></div>
+
+<div class="pathbar">
+
+<a class="vr_pathTop" href="ag.cgi?page=AGIndex">トップページ</a><span class="vr_pathCurrent">&nbsp;</span><span>個人フォルダ（受信箱）</span>
+</div>
+
+<div class="content">
+<div style="width:100%;">
+<div class="menubar">
+ <div class="clearfix">
+ <div class="menuOpen">
+<h2 class="visuallyHidden">個人フォルダ</h2>
+<span class="vr_vMenu">
+<span class="menubarTextLink"><a class="vr_hotButton" href="ag.cgi?page=MyFolderMessageSend&amp;fid=inbox&amp;cp=ml"><img src="/cb1080/image/msg16.png" align=absmiddle>メッセージを送る</a></span>&nbsp;
+</span>
+<span class="menubarTextLink"><a class="" href="ag.cgi?page=MyFolderMemoAdd&amp;fid=inbox&amp;cp=ml"><img src="/cb1080/image/memo16.png" align=absmiddle>メモを書く</a></span>&nbsp;
+<span class="menubarTextLink"><a class="" href="ag.cgi?page=MyFolderAdd&amp;fid=inbox&amp;cp=ml"><img src="/cb1080/image/folder16.png" align=absmiddle>フォルダを追加する</a></span>&nbsp;
+ </div>
+ <div class="menuOpenSearch">
+<form method="get" name="search" action="ag.cgi?" onSubmit="return OnSubmitSearch('search','MyFolderSimpleSearch')" class="myfolderSearch" style="display:inline;">
+<input type=hidden name=page value="MyFolderSimpleSearch">
+<input type=hidden name=fid value="inbox">
+<input type=hidden name=cp value="ml">
+<img src="/cb1080/image/search16.png" align=absmiddle><input type="text" name="Text" value="" size="20" maxlength="100"> <input class="searchButton vr_stdButton" type="submit" value="個人フォルダ検索">
+<font size="-1">
+<span class="menubarTextLink"><a class="" href="javascript:OnDetailSearch('search','MyFolderSearch')">詳細検索</a></span>&nbsp;
+</font>
+</form>
+ </div>
+ </div>
+</div>
+<a name="MyFolderHead"></a>
+<table class="vr_contentArea" width="100%" role="presentation"><tr><td class="vr_contentAreaTd">
+<table class="multicol" width="100%" role="presentation">
+ <tr valign="top">
+ <td class="naviColumn" width="30%">
+ <div class="vr_naviColumn">
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/yui/treeview/treeview-min.js?_v=1085120210203114957.js"></script>
+<link rel="stylesheet" type="text/css" href="/cb1080/html/yui/treeview/assets/skins/sam/treeview.css?_v=1085120210203114957.css" />
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/treeview.js?_v=1085120210203114957.js"></script>
+<script type="text/javascript"><!--
+var gSubscribeDesc = "高橋 健太 さんに更新情報が通知されるフォルダ";
+YAHOO.util.Event.onDOMReady( function() {
+ var tree;
+ var currentNode = null;
+
+ tree = new CB7.TreeView( "cb7-myfolder-foldertree" );
+ CB7.TreeView.REQUEST_URL = "ag.cgi";
+ var node0 = tree.getRoot();
+
+node = new CB7.MyFolder.TreeNode( "[受信箱]", node0, false, {bCurrent: true,bSubscribe: true, fid: "inbox"} );
+node = new CB7.MyFolder.TreeNode( "[送信箱]", node0, false, {bSubscribe: true, fid: "sent"} );
+node = new CB7.MyFolder.TreeNode( "[下書き]", node0, false, {fid: "unsent"} );
+node = new CB7.MyFolder.TreeNode( "[ごみ箱]", node0, false, {fid: "trash"} );
+
+ tree.draw();
+
+ if( currentNode )
+ {
+ currentNode.scrollAutomatically( true, true );
+ }
+
+ YAHOO.util.Event.on( window, "resize", function() {
+ tree.adjustWidth();
+ });
+});
+//--></script>
+<h3 class="visuallyHidden">フォルダ一覧</h3>
+<div id="cb7-myfolder-foldertree" class="treeview"></div>
+<hr>
+<nobr>
+<div class="vr_naviColumnMenu">
+<a id="" href="ag.cgi?page=PersonalMyFolderSubscribe&amp;fid=inbox&amp;cp=ml"><img src="/cb1080/image/subscribe16.png" align=absmiddle>通知するフォルダの設定</a><br>
+</div>
+<div class="vr_naviColumnMenu">
+<img src="/cb1080/image/order16.png" align=absmiddle><span class="fontDisable">フォルダの順番変更</span><br>
+</div>
+</nobr>
+ </div>
+ </td>
+ <td class="vr_spaceColumn"></td>
+ <td class="listColumn" width="70%">
+ <div class="vr_listColumn"><!-- for ie margin -->
+ <div class="vr_mainColumn">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"><tr><td>
+<table class="layout" role="presentation"><tr>
+<td class="vr_valignMiddle">
+<img src="/cb1080/image/inbox16.png" align=absmiddle><h3 class="dataListCaption">[受信箱]</h3>
+<img src="/cb1080/image/subscribe12.png" class="vr_suffixIcon" align=absmiddle></td>
+<td>&nbsp;</td>
+<td class="vr_valignMiddle" nowrap>
+<button class="vr_stdButton" type="button" id="btnoptionFolder" onClick='DisplayMenu("optionFolder","folderSelect");'><nobr>その他の操作<img src="/cb1080/image/showdown12.png" align=absmiddle></nobr></button>
+<br><div id="optionFolder" class="submenu" style="display:none;">
+<div class="submenuitem"><nobr><a class="" href="ag.cgi?page=MyFolderView&amp;fid=inbox&amp;cp=ml"><img src="/cb1080/image/detail16.png" align=absmiddle>フォルダの詳細</a>&nbsp;
+</nobr></div>
+<div class="submenuitem"><nobr>
+<a id="" href="ag.cgi?page=MyFolderSubscribe&amp;unsubscribe=1&amp;fid=inbox&amp;cp=ml"><img src="/cb1080/image/subscribe16.png" align=absmiddle>更新通知を解除する</a><br>
+</nobr></div>
+<div class="submenuitem"><nobr>
+<img src="/cb1080/image/delete16.png" align=absmiddle><span class="fontDisable">フォルダを削除する</span><br>
+</nobr></div>
+<div class="submenuitem"><nobr>
+<a id="" href="ag.cgi?page=MyFolderDeleteAll&amp;fid=inbox&amp;cp=ml"><img src="/cb1080/image/delete16.png" align=absmiddle>フォルダ内の全データを削除する</a><br>
+</nobr></div>
+<div class="submenuitem"><nobr>
+<a id="" href="ag.cgi?page=MyFolderIndex&amp;fid=inbox&amp;wn=1&amp;unread=&amp;cp="><img src="/cb1080/image/sortdown16.png" align=absmiddle>更新日時でソートする</a><br>
+</nobr></div>
+<div class="hr">&nbsp;</div>
+<div class="submenuitem"><nobr><a onClick="DisplayMenu('optionFolder','folderSelect'); return false;" href="javascript:void(0);"><img src="/cb1080/image/close16.png" align=absmiddle>閉じる</a></nobr></div>
+</div>
+</td>
+</tr></table>
+</td>
+<td class="vr_valignMiddle" align="right" style="font-size: 90%;">
+絞込<form method="get" action="ag.cgi?" style="display:inline;">
+<input type="hidden" name="page" value="MyFolderIndex">
+<input type="hidden" name="fid" value="inbox">
+<select name="unread" onChange="this.form.submit();">
+ <option value="">(全件)
+ <option value=1000  >過去  1000 件(未読)
+ <option value=5000  >過去  5000 件(未読)
+ <option value=10000 >過去 10000 件(未読)
+ <option value=-1>全件(未読)
+</select>
+</form>
+</td>
+</tr></table>
+<form method="post" name="list" action="ag.cgi?" style="display:inline;">
+<input type="hidden" name="csrf_ticket" value="a2deb79d845fc0a093628d3e9c1f1c1e">
+<input type=hidden name=FID value="inbox">
+<input type=hidden name=NCP value="ml">
+<input type=hidden name=Page value=MyFolderIndex>
+<div class="vr_nNavi">
+<nobr>
+<span class="fontDisable">先頭へ</span> | <span class="fontDisable">&lt;&lt; 前の 20 件へ</span> |
+<span class="fontDisable">次の 20 件へ &gt;&gt;</span>
+</nobr>
+</div>
+<table class="dataList dataListSummary" width="100%" >
+ <tr>
+ <th><button class="vr_iconButton" type="button" onClick="javascript:CheckAll();"><img src="/cb1080/image/check10.png" align=absmiddle alt="クリックするとすべてをチェックできます" title="クリックするとすべてをチェックできます"></button></th>
+ <th><br></th>
+ <th nowrap>標題</th>
+ <th nowrap>差出人</th>
+ <th nowrap>作成日時<a id="" href="ag.cgi?page=MyFolderIndex&amp;FID=inbox&amp;rv=1&amp;unread="><img src="/cb1080/image/sortdown16.png" class="sortimage" align=absmiddle></a> </th>
+ <th nowrap>備考</th>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="1005" onClick="ToggleCheckRowClass(this)"class="needConfirm"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','1005','2','4'); return false;" id="toggleLink1005"><img src="/cb1080/image/plus16.png" id="toggleImg1005" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=2&amp;mEID=1005&amp;mDID=4&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/noclip8x16.png" align=absmiddle>try</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/loginuser20.png" style="width: 20px; height: 20px;" align=absmiddle>高橋 健太 </td>
+ <td nowrap> 2016/10/31(月)</td>
+ <td align="right" nowrap>&nbsp;
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow1005" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary1005" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="782" onClick="ToggleCheckRowClass(this)"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','782','4','4'); return false;" id="toggleLink782"><img src="/cb1080/image/plus16.png" id="toggleImg782" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=4&amp;mEID=782&amp;mDID=4&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/noclip8x16.png" align=absmiddle>【講読自由】総務からのお知らせ</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/user20.png" style="width: 20px; height: 20px;" align=absmiddle>大山 春香 </td>
+ <td nowrap> 2015/10/8(木)</td>
+ <td align="right" nowrap>&nbsp;
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow782" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary782" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="761" onClick="ToggleCheckRowClass(this)"class="needConfirm"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','761','5','4'); return false;" id="toggleLink761"><img src="/cb1080/image/plus16.png" id="toggleImg761" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=5&amp;mEID=761&amp;mDID=4&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/noclip8x16.png" align=absmiddle>【連絡帳】営業部 ⇔ 総務部</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/loginuser20.png" style="width: 20px; height: 20px;" align=absmiddle>高橋 健太 </td>
+ <td nowrap> 2015/10/8(木)</td>
+ <td align="right" nowrap>&nbsp;
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow761" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary761" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="638" onClick="ToggleCheckRowClass(this)"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','638','8','4'); return false;" id="toggleLink638"><img src="/cb1080/image/plus16.png" id="toggleImg638" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=8&amp;mEID=638&amp;mDID=4&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/noclip8x16.png" align=absmiddle>健康診断のお知らせ</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/user20.png" style="width: 20px; height: 20px;" align=absmiddle>大山 春香 </td>
+ <td nowrap> 2014/4/12(土)</td>
+ <td align="right" nowrap>未確認
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow638" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary638" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="300" onClick="ToggleCheckRowClass(this)"class="needConfirm"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','300','9','4'); return false;" id="toggleLink300"><img src="/cb1080/image/plus16.png" id="toggleImg300" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=9&amp;mEID=300&amp;mDID=4&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/clip8x16.png" align=absmiddle>スマートフォンから「サイボウズ　Office」を利用したい方...</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/loginuser20.png" style="width: 20px; height: 20px;" align=absmiddle>高橋 健太 </td>
+ <td nowrap> 2011/9/29(木)</td>
+ <td align="right" nowrap>&nbsp;
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow300" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary300" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="85" onClick="ToggleCheckRowClass(this)"class="needConfirm"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','85','','4'); return false;" id="toggleLink85"><img src="/cb1080/image/plus16.png" id="toggleImg85" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=&amp;mEID=85&amp;mDID=4&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/noclip8x16.png" align=absmiddle>【回覧板】『電話メモ』の利用について</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/loginuser20.png" style="width: 20px; height: 20px;" align=absmiddle>高橋 健太 </td>
+ <td nowrap> 2011/9/21(水)</td>
+ <td align="right" nowrap>&nbsp;
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow85" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary85" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="81" onClick="ToggleCheckRowClass(this)"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','81','','25'); return false;" id="toggleLink81"><img src="/cb1080/image/plus16.png" id="toggleImg81" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=&amp;mEID=81&amp;mDID=25&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/noclip8x16.png" align=absmiddle>個人フォルダの 「＋」 ボタンについて</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/user20.png" style="width: 20px; height: 20px;" align=absmiddle>和田 一夫 </td>
+ <td nowrap> 2011/9/21(水)</td>
+ <td align="right" nowrap>&nbsp;
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow81" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary81" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td width=1%><input type=checkbox name=EID value="73" onClick="ToggleCheckRowClass(this)"class="needConfirm"></td>
+ <td width=1% nowrap>
+<a href="javascript:void(0);" onclick="CB7.MyFolder.List.ToggleSummary('ag.cgi','Message','73','','33'); return false;" id="toggleLink73"><img src="/cb1080/image/plus16.png" id="toggleImg73" title="概要を表示する" align=absmiddle></a> </td>
+ <td nowrap><a href="ag.cgi?page=MyFolderMessageView&amp;mDBID=&amp;mEID=73&amp;mDID=33&amp;cp=ml&amp;sp=&amp;tp="><img src="/cb1080/image/msg16.png" align=absmiddle><img src="/cb1080/image/noclip8x16.png" align=absmiddle>【連絡帳】営業部 ⇔ 総務部</a>
+ </td>
+ <td nowrap>
+<img class="profileImage" src="/cb1080/image/loginuser20.png" style="width: 20px; height: 20px;" align=absmiddle>高橋 健太 </td>
+ <td nowrap> 2011/9/21(水)</td>
+ <td align="right" nowrap>&nbsp;
+ </td>
+ </tr>
+ <tr class="summaryRow" id="myfolderSummaryRow73" style="display: none;">
+ <td class="summaryCell" colspan="2"></td>
+ <td class="summaryCell" colspan="4">
+ <div id="myfolderSummary73" class="summary">
+ <img src="/cb1080/image/spinner.gif" align=absmiddle>
+ </div>
+ </td>
+ </tr>
+</table>
+<div class="vr_nNavi">
+<nobr>
+<span class="fontDisable">先頭へ</span> | <span class="fontDisable">&lt;&lt; 前の 20 件へ</span> |
+<span class="fontDisable">次の 20 件へ &gt;&gt;</span>
+</nobr>
+</div>
+<div class="vr_sNavi">
+<nobr><input class="vr_stdButton" type="button" name=Delete value="削除する" onclick="CB7.MyFolder.List.deleteMulti( 'ag.cgi', 'inbox', this.form.EID, 'page=MyFolderIndex&fid=inbox&lhid=1', '1' );"></nobr> &nbsp;
+<nobr><input type="submit" class="vr_stdButton" name="Read" value="既読にする" onclick="PreSubmitCheck( form );"></nobr> &nbsp;
+<nobr><select name="PID" id="folderSelect">
+<option value="inbox" Selected>[受信箱]
+<option value="sent">[送信箱]
+<option value="unsent">[下書き]
+</select>へ<input type="submit" class="vr_stdButton" name="Move" value="移動する" onClick='return PreSubmitCheck( form );'>
+</nobr>
+</div>
+<div class="myfolderDesc">
+総メモサイズ：1MB以下
+</div>
+ </div>
+ </div>
+ </td>
+ </tr>
+</table>
+</td></tr></table>
+</form>
+<div class="vr_contentBottom clearfix">
+<script language="javascript" type="text/javascript">
+<!--
+ShowBackLink("", "", true, "/cb1080/image/backlink16.png", "", false);
+//-->
+</script>
+<a class="vr_scrollUp" href="javascript:void(0);" onclick="$('html, body').animate({scrollTop:0}, 500); return false;">▲</a>
+</div>
+</div></div>
+ <div class="footbar">
+<script type="text/javascript" charset="UTF-8" src="/cb1080/html/myfolder.js?_v=1085120210203114957.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+function moveItemSubmit( EID ) {
+ var PID = YAHOO.util.Dom.get( "folderSelect" + EID ).value;
+ CB7.MyFolder.List.moveItem( "ag.cgi", "inbox", PID, EID );
+ return false;
+}
+function PreSubmitCheck( form ) {
+ var num = form.elements.length;
+ var i;
+ for( i = 0; i < num; i++ ) {
+ if( form.elements[i].name == "EID" ) {
+ if( form.elements[i].checked ) return true;
+ }
+ }
+ return false;
+}
+//--></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+function CheckAll()
+{
+ var e = document.forms["list"].elements;
+ var l = e.length;
+ var checked = false;
+
+ for( i = 0 ; i < l ; i ++ ) { if( e[i].name == "EID" && ! e[i].checked  ) { checked = true; } }
+ for( i = 0 ; i < l ; i ++ ) { if( e[i].name == "EID" ) { e[i].checked=checked; ToggleCheckRowClass(e[i]); } }
+}
+
+function ToggleCheckRowClass(checkbox)
+{
+ var checkedRow = checkbox.parentNode.parentNode;
+ $(checkedRow).toggleClass("vr_checkedRow", checkbox.checked);
+}
+//-->
+</script>
+<div class="copyright">サイボウズ Office Version 10.8.5 20210203114957</div></div></div></body>
+</html>
