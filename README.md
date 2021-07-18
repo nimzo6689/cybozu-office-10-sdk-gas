@@ -9,11 +9,13 @@ Script ID: `1lL-Cy5zFVjxDNzwtjuKxi22VtSNU6bSOodSrxSHeqkKCwJa2E8QrirL0`
 
 ## 使い方
 
+以下、 Google Apps Script エディタ内でライブラリの参照名を `CybozuOfficeSDK` とした場合を想定しています。
+
 ```js
 const loginId = "xxxxxxx";
 const password = "xxxxxxx";
 
-const cybozuOffice = new SUT.CybozuOffice(
+const cybozuOffice = new CybozuOfficeSDK.CybozuOffice(
   "https://test.cybozu.info/scripts/office10/ag.cgi",
   loginId,
   password
