@@ -14,7 +14,7 @@ const loginId = "xxxxxxx";
 const password = "xxxxxxx";
 
 const cybozuOffice = new SUT.CybozuOffice(
-  "https://www.jcsc.co.jp/cgi-bin/cbag/ag.cgi",
+  "https://test.cybozu.info/scripts/office10/ag.cgi",
   loginId,
   password
 );
