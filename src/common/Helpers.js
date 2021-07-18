@@ -20,7 +20,7 @@ export class LoadReductionCallable {
 
 export class Utils {
   static addPair(kv, key, value) {
-    if (typeof kv == "string") {
+    if (typeof kv == 'string') {
       return `${kv}&${key}=${value}`;
     } else {
       return { ...kv, ...{ [key]: value } };
@@ -29,16 +29,16 @@ export class Utils {
 
   static buildQuery(params) {
     if (!params) {
-      return "";
+      return '';
     }
 
-    if (typeof params == "string") {
+    if (typeof params == 'string') {
       return params;
     }
 
     return Object.entries(params)
-      .map((pair) => pair.map(encodeURI).join("="))
-      .join("&");
+      .map(pair => pair.map(encodeURI).join('='))
+      .join('&');
   }
 
   static createCookieValue(agSessId) {

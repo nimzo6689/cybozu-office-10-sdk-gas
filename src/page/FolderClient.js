@@ -10,7 +10,7 @@ export default class FolderClient {
    * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
    */
   constructor(transport) {
-    this._pagePrefix = "MyFolder";
+    this._pagePrefix = 'MyFolder';
     this._transport = transport;
   }
 
@@ -28,20 +28,12 @@ export default class FolderClient {
     };
 
     const document = this._transport.get(query);
-    const rawMessages = document
-      .toString()
-      .match(/(?<=MyFolderMessageView).*?(?=profileImage)/gis);
+    const rawMessages = document.toString().match(/(?<=MyFolderMessageView).*?(?=profileImage)/gis);
 
-    return rawMessages.map((rawHtml) => ({
-      mDBID: rawHtml.match(/mDBID=(\d+)/i)
-        ? Number(rawHtml.match(/mDBID=(\d+)/i)[1])
-        : null,
-      mDID: rawHtml.match(/mDID=(\d+)/i)
-        ? Number(rawHtml.match(/mDID=(\d+)/i)[1])
-        : null,
-      subject: rawHtml.match(
-        /(?<=clip8x16.png\" align=absmiddle>).*?(?=<\/a>)/i
-      )[0],
+    return rawMessages.map(rawHtml => ({
+      mDBID: rawHtml.match(/mDBID=(\d+)/i) ? Number(rawHtml.match(/mDBID=(\d+)/i)[1]) : null,
+      mDID: rawHtml.match(/mDID=(\d+)/i) ? Number(rawHtml.match(/mDID=(\d+)/i)[1]) : null,
+      subject: rawHtml.match(/(?<=clip8x16.png\" align=absmiddle>).*?(?=<\/a>)/i)[0],
     }));
   }
 
@@ -51,7 +43,7 @@ export default class FolderClient {
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
   inbox(reversed = 0) {
-    return this._index("inbox", reversed);
+    return this._index('inbox', reversed);
   }
 
   /**
@@ -60,7 +52,7 @@ export default class FolderClient {
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
   sent(reversed = 0) {
-    return this._index("sent", reversed);
+    return this._index('sent', reversed);
   }
 
   /**
@@ -69,7 +61,7 @@ export default class FolderClient {
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
   unsent(reversed = 0) {
-    return this._index("unsent", reversed);
+    return this._index('unsent', reversed);
   }
 
   /**

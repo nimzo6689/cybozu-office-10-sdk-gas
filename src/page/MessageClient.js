@@ -1,4 +1,4 @@
-const cheerio = require("cheerio");
+const cheerio = require('cheerio');
 
 /**
  * MyFolderMessage* （個人フォルダ内のメッセージ） ページの情報を JavaScript オブジェクトとして取得する。
@@ -12,7 +12,7 @@ export default class MessageClient {
    * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
    */
   constructor(transport) {
-    this._pagePrefix = "MyFolderMessage";
+    this._pagePrefix = 'MyFolderMessage';
     this._transport = transport;
   }
 
@@ -36,7 +36,7 @@ export default class MessageClient {
     useConfirm = 0,
     simpleReplyEnable = 1
   ) {
-    const uidPairs = uidList.map((uid) => `UID=${uid}`).join("&");
+    const uidPairs = uidList.map(uid => `UID=${uid}`).join('&');
 
     const body = {
       page: `${this._pagePrefix}Send`,
@@ -59,7 +59,7 @@ export default class MessageClient {
    * Not supported yet.
    */
   view(mDBID, mDID) {
-    throw new Error("Not supported yet.");
+    throw new Error('Not supported yet.');
   }
 
   /**
@@ -75,7 +75,7 @@ export default class MessageClient {
       DBID: mDBID,
       MID: mDID,
       PID: pID,
-      Submit: "移動する",
+      Submit: '移動する',
     };
 
     this._transport.post(Utils.buildQuery(body));
@@ -97,13 +97,11 @@ export default class MessageClient {
       MID: mDID,
     };
     if (hID) {
-      body["hid"] = hID;
+      body['hid'] = hID;
     }
 
     const document = this._transport.get(query);
-    const rawfollows = document
-      .toString()
-      .match(/(?<=vr_followWrapper).*?(?=followMenu)/gis);
+    const rawfollows = document.toString().match(/(?<=vr_followWrapper).*?(?=followMenu)/gis);
 
     if (!rawfollows) {
       return null;
@@ -113,14 +111,12 @@ export default class MessageClient {
 
   _toFollowModel(rawHtml) {
     const followId = Number(rawHtml.match(/(?<=follow-root-)[0-9]+/i)[0]);
-    const userName = rawHtml.match(
-      /(?<=vr_followUserName.*?>).*?(?=<\/span>)/is
-    )[0];
+    const userName = rawHtml.match(/(?<=vr_followUserName.*?>).*?(?=<\/span>)/is)[0];
     let attached = rawHtml.match(/(?<=<td nowrap>.*?<a href=").*?(?=">)/is);
     let _, attachedFile, attachedQuery;
     if (attached) {
       [_, attachedFile, attachedQuery] = attached[0].split(/[/?]/);
-      attachedQuery = attachedQuery.replace(/&amp;/gi, "&");
+      attachedQuery = attachedQuery.replace(/&amp;/gi, '&');
     }
 
     return {
@@ -164,7 +160,7 @@ export default class MessageClient {
       SimpleReplyEnable: simpleReplyEnable,
       DBID: mDBID,
       MID: mDID,
-      Submit: "変更する",
+      Submit: '変更する',
     };
 
     this._transport.post(Utils.buildQuery(body));
@@ -183,7 +179,7 @@ export default class MessageClient {
       DBID: mDBID,
       MID: mDID,
       Remove: 1,
-      Yes: "移動する",
+      Yes: '移動する',
     };
 
     this._transport.post(Utils.buildQuery(body));
@@ -249,7 +245,7 @@ export default class MessageClient {
       MID: mDID,
     };
     if (mark) {
-      body["Value"] = mark;
+      body['Value'] = mark;
     }
 
     this._transport.post(Utils.buildQuery(body));
@@ -284,7 +280,7 @@ export default class MessageClient {
         };
       })
       .toArray()
-      .filter((e) => e.uID !== 0);
+      .filter(e => e.uID !== 0);
   }
 
   /**
@@ -296,7 +292,7 @@ export default class MessageClient {
    * @param {number[]} uidList - 宛先 UID リスト
    */
   modifyReceivers(mDBID, mDID, eID, uidList) {
-    const uidPairs = uidList.map((uid) => `UID=${uid}`).join("&");
+    const uidPairs = uidList.map(uid => `UID=${uid}`).join('&');
 
     const body = {
       page: `${this._pagePrefix}ReceiverAdd`,

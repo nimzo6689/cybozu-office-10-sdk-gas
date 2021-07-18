@@ -1,16 +1,14 @@
-const fs = require("fs");
+const fs = require('fs');
 
-import MessageClient from "../src/page/MessageClient";
+import MessageClient from '../src/page/MessageClient';
 
-describe("メッセージ", () => {
-  const page_MyFolderIndex_rawContent = fs.readFileSync(
-    `${__dirname}/resources/page_MyFolderMessageView.rawContent`
-  );
+describe('メッセージ', () => {
+  const page_MyFolderIndex_rawContent = fs.readFileSync(`${__dirname}/resources/page_MyFolderMessageView.rawContent`);
 
-  it("メッセージのコメントが取得できるか", () => {
+  it('メッセージのコメントが取得できるか', () => {
     const CybozuTransportMock = jest.fn().mockImplementation(() => {
       return {
-        get: (x = "") => {
+        get: (x = '') => {
           return page_MyFolderIndex_rawContent;
         },
       };
@@ -21,13 +19,13 @@ describe("メッセージ", () => {
     const expected = [
       {
         followId: 24,
-        userName: "和田 一夫",
+        userName: '和田 一夫',
         attachedFile: undefined,
         attachedQuery: undefined,
       },
       {
         followId: 17,
-        userName: "加藤 美咲",
+        userName: '加藤 美咲',
         attachedFile: undefined,
         attachedQuery: undefined,
       },

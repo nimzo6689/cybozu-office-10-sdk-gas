@@ -1,9 +1,9 @@
-import CybozuTransport from "./common/Transport";
-import MessageClient from "./page/MessageClient";
-import FileClient from "./page/FileClient";
-import UserClient from "./page/UserClient";
-import FolderClient from "./page/FolderClient";
-import BulletinClient from "./page/BulletinClient";
+import CybozuTransport from './common/Transport';
+import MessageClient from './page/MessageClient';
+import FileClient from './page/FileClient';
+import UserClient from './page/UserClient';
+import FolderClient from './page/FolderClient';
+import BulletinClient from './page/BulletinClient';
 
 /**
  * Cybozu Office 10 の操作 API を提供。
@@ -20,12 +20,7 @@ export class CybozuOffice {
    * @param {string} [sleepSec = 1] - スリープ間隔（秒）
    */
   constructor(baseUrl, accountId, password, sleepSec = 1) {
-    this._transport = new CybozuTransport(
-      baseUrl,
-      accountId,
-      password,
-      sleepSec
-    );
+    this._transport = new CybozuTransport(baseUrl, accountId, password, sleepSec);
 
     this.message = new MessageClient(this._transport);
     this.file = new FileClient(this._transport);

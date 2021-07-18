@@ -9,7 +9,7 @@ export default class BulletinClient {
    * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
    */
   constructor(transport) {
-    this._pagePrefix = "Bulletin";
+    this._pagePrefix = 'Bulletin';
     this._transport = transport;
   }
 

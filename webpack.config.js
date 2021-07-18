@@ -1,11 +1,11 @@
-const GasPlugin = require("gas-webpack-plugin");
+const GasPlugin = require('gas-webpack-plugin');
 
 module.exports = {
-  mode: "none",
+  mode: 'none',
   entry: `./src/index.js`,
   output: {
     path: `${__dirname}/dist`,
-    filename: "main.js",
+    filename: 'main.js',
   },
   module: {
     rules: [
@@ -13,7 +13,7 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
         ],
       },

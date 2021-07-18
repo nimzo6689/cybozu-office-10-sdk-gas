@@ -1,4 +1,4 @@
-const cheerio = require("cheerio");
+const cheerio = require('cheerio');
 
 /**
  * UserList* （ユーザ名簿） ページの情報を JavaScript オブジェクトとして取得する。
@@ -12,7 +12,7 @@ export default class UserClient {
    * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
    */
   constructor(transport) {
-    this._pagePrefix = "UserList";
+    this._pagePrefix = 'UserList';
     this._transport = transport;
   }
 
@@ -31,15 +31,15 @@ export default class UserClient {
     const document = this._transport.get(query);
     const $ = cheerio.load(document);
 
-    return $("table.dataList tr > td:nth-child(1)  a")
+    return $('table.dataList tr > td:nth-child(1)  a')
       .map((i, elem) => {
         const parsed = $(elem);
         return {
-          uID: Number(parsed.attr("href").match(/(?<=uid=)[0-9]+/i)[0]),
+          uID: Number(parsed.attr('href').match(/(?<=uid=)[0-9]+/i)[0]),
           userName: parsed.text(),
         };
       })
       .toArray()
-      .filter((e) => e.uID !== 0);
+      .filter(e => e.uID !== 0);
   }
 }
