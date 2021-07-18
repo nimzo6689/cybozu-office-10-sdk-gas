@@ -28,15 +28,19 @@ export default class FolderClient {
     };
 
     const document = this._transport.get(query);
-    const rawMessages = document.match(
-      /(?<=MyFolderMessageView).*?(?=profileImage)/gis
-    );
+    const rawMessages = document
+      .toString()
+      .match(/(?<=MyFolderMessageView).*?(?=profileImage)/gis);
 
     return rawMessages.map((rawHtml) => ({
-      mDBID: rawHtml.match(/mDBID=(\d+)/i)[1],
-      mDID: rawHtml.match(/mDID=(\d+)/i)[1],
+      mDBID: rawHtml.match(/mDBID=(\d+)/i)
+        ? Number(rawHtml.match(/mDBID=(\d+)/i)[1])
+        : null,
+      mDID: rawHtml.match(/mDID=(\d+)/i)
+        ? Number(rawHtml.match(/mDID=(\d+)/i)[1])
+        : null,
       subject: rawHtml.match(
-        /(?<=noclip8x16.png\" align=absmiddle>).*?(?=<\/a>)/i
+        /(?<=clip8x16.png\" align=absmiddle>).*?(?=<\/a>)/i
       )[0],
     }));
   }

@@ -101,9 +101,9 @@ export default class MessageClient {
     }
 
     const document = this._transport.get(query);
-    const rawfollows = document.match(
-      /(?<=vr_followWrapper).*?(?=followMenu)/gis
-    );
+    const rawfollows = document
+      .toString()
+      .match(/(?<=vr_followWrapper).*?(?=followMenu)/gis);
 
     if (!rawfollows) {
       return null;
@@ -112,9 +112,9 @@ export default class MessageClient {
   }
 
   _toFollowModel(rawHtml) {
-    const followId = rawHtml.match(/(?<=follow-root-)[0-9]+/i)[0];
+    const followId = Number(rawHtml.match(/(?<=follow-root-)[0-9]+/i)[0]);
     const userName = rawHtml.match(
-      /(?<=vr_followUserName.*?align=absmiddle>).*?(?=<)/is
+      /(?<=vr_followUserName.*?>).*?(?=<\/span>)/is
     )[0];
     let attached = rawHtml.match(/(?<=<td nowrap>.*?<a href=").*?(?=">)/is);
     let _, attachedFile, attachedQuery;
