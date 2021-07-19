@@ -24,6 +24,14 @@ describe('メッセージ', () => {
         attachedQuery: undefined,
       },
       {
+        followId: 21,
+        userName: '大山 春香',
+        attachedFile:
+          '%E8%A9%A6%E9%A8%93%E7%94%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB(%E5%A4%A7%E5%B1%B1%E6%98%A5%E9%A6%99).txt',
+        attachedQuery:
+          'page=FileDownload&id=1712074&mDBID=7&mEID=85&mDID=313440&notimecard=1&type=text&subtype=plain&ct=1&ext=.txt',
+      },
+      {
         followId: 17,
         userName: '加藤 美咲',
         attachedFile: undefined,

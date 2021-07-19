@@ -107,10 +107,10 @@ export default class MessageClient {
       .map((i, el) => {
         const parsed = $(el);
 
-        const attached = parsed.find('.vr_viewContentsAttach a').attr('href');
+        const attached = parsed.find('.vr_viewContentsAttach td:first-child a').attr('href');
         let _, attachedFile, attachedQuery;
         if (attached) {
-          [_, attachedFile, attachedQuery] = attached[0].split(/[/?]/);
+          [_, attachedFile, attachedQuery] = attached.split(/[/?]/);
           attachedQuery = attachedQuery.replace(/&amp;/gi, '&');
         }
 

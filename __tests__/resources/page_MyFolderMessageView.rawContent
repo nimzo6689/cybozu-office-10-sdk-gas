@@ -1100,6 +1100,68 @@ CB7.follow.simpleReplyValues['message-85-24'] = null;
 </div>
 </div>
 </div>
+<div class="vr_followWrapper" id="follow-root-21">
+<div class="vr_follow vr_stripe" id="follow-message-85-21" onmouseover="CB7.follow.selectComment('message-85-21')" onmouseout="CB7.follow.unselectComment('message-85-21')">
+<div class="vr_followHeader clearfix">
+<span class="vr_followNo">14&nbsp;:</span><span class="vr_followUser"><span class="vr_followUserName"><img class="profileImage" src="ag.cgi/20x20.png?page=UserImageDownload&amp;notimecard=1&amp;id=6398&amp;ct=1&amp;v=1437031632&amp;Width=20&amp;Height=20&amp;ext=.png" style="width: 20px; height: 20px;" align=absmiddle>大山 春香</span><span class="vr_followUserGroup">（総務部）
+</span></span><span class="vr_followTime">
+ 2021/7/18(日) 23:28
+</span></div>
+<div id="followContents21" class="vr_followContents"><tt>テスト用に添付ファイルを載せますね。</tt></div>
+<input type="hidden" id="followHeader21" value="大山 春香さん">
+<div class="vr_viewContentsAttach">
+<table>
+ <tr class="">
+ <td nowrap>
+<a href="ag.cgi/%E8%A9%A6%E9%A8%93%E7%94%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB(%E5%A4%A7%E5%B1%B1%E6%98%A5%E9%A6%99).txt?page=FileDownload&amp;id=1712074&amp;mDBID=7&amp;mEID=85&amp;mDID=313440&amp;notimecard=1&amp;type=text&amp;subtype=plain&amp;ct=1&amp;ext=.txt"><img src="/cb1000/image/file16.png" align=absmiddle>試験用ファイル(大山春香).txt</a>
+ </td>
+ <td nowrap>（text/plain） </td>
+ <td nowrap>
+<a class="" href="ag.cgi?page=FileView&amp;fFID=21&amp;mDBID=7&amp;mEID=85&amp;mDID=313440&amp;sp=mld&amp;SavePath=1">詳細</a>&nbsp;
+ </td>
+ <td nowrap>3 KB</td>
+ </tr>
+</table>
+</div>
+<div class="followMenu clearfix">
+ <div class="followMenuMain">
+ <span class="followMenuLinkWrapper">
+ <span class="followMenuLinkInner" id="simpleReplyLinkText-message-85-21" onmouseover="YAHOO.util.Dom.addClass(this.parentNode, 'simpleReplyLinkWrapperHover')" onmouseout="YAHOO.util.Dom.removeClass(this.parentNode, 'simpleReplyLinkWrapperHover')">
+ <a class="simpleReplyTextLink" href="#" onclick="CB7.follow.simpleReply('message', 85, 21, null, false);return false;"><img src="/cb1000/image/good16.png" align=absmiddle>いいね！</a><a id="simpleReplyImageMenuLink-message-85-21" class="simpleReplyImageMenuLink" href="#" onclick="CB7.follow.toggleSimpleReplyMenu(this, 'message', 85, 21);return false;"><img src="/cb1000/image/showdown12.png" align=absmiddle></a>
+ </span>
+ <span class="followMenuLinkInner" id="simpleReplyLinkCancel-message-85-21" style="display:none">
+<a class="simpleReplyTextLink" href="#" onclick="CB7.follow.simpleReply('message', 85, 21, null, true);return false;"><img src="/cb1000/image/good16.png" align=absmiddle>「いいね！」を取り消す</a>
+ </span>
+ </span>
+<span class="followMenuLinkWrapper vr_iconReply"><a class="" href="#" onClick="CB7.followJQ.inputReferenceToFollowForm( '21', this, 1, 14 );return false;" name=""><img src="/cb1000/image/reply16.png" align=absmiddle>返信する</a></span>&nbsp;
+ </div>
+ <div class="followMenuSub">
+<span class="followMenuLinkWrapper vr_iconUrlTip"><a class="" href="#" onClick="CB7.follow.showPermalink( this, 'https://onlinedemo.cybozu.info/scripts/office10/ag.cgi?page=MyFolderMessageView&amp;mDBID=7&amp;mDID=43&amp;tp=t&amp;flno=2#Follow' );return false;" name=""><img src="/cb1000/image/permlink16.png" align=absmiddle>固定リンク</a></span>&nbsp;
+<span class="followMenuLinkWrapper vr_iconDelete"><a class="" href="javascript:void(0)" onClick="CB7.followJQ.deleteFollow('ag.cgi?page=AjaxMyFolderMessageFollowDelete&amp;dbid=7&amp;frid=21&amp;mid=313440&amp;eid=85&amp;cp=mld', this, 'コメントの削除')" name=""><img src="/cb1000/image/delete16.png" align=absmiddle>削除する</a></span>&nbsp;
+ </div>
+</div>
+<div class="simpleReplyUserList" id="simpleReplyUserList-message-85-21" style="display:none">
+ <div class="simpleReplyUserListTip"></div>
+ <ul class="simpleReplyUsers">
+ <li class="simpleReplyUser" id="simpleReplyUser-message-85-21-spinner" style="display:none">
+ <span class="simpleReplyUserArea"><img src="/cb1000/image/spinner.gif" align="absmiddle"></span>
+ </li>
+ <li class="simpleReplyUser simpleReplyUserMe" id="simpleReplyUser-message-85-21-me" style="display:none">
+ <a href="#" onclick="javascript:CB7.follow.showSimpleReplyMenu(this, 'message', 85, 21);return false;">
+ <span class="profileSimpleReplyImage" style="cursor:pointer" title="大山 春香">
+<img class="profileImage" src="ag.cgi/20x20.png?page=UserImageDownload&amp;notimecard=1&amp;id=6398&amp;ct=1&amp;v=1437031632&amp;Width=20&amp;Height=20&amp;ext=.png" style="width: 20px; height: 20px;" align=absmiddle><script language="JavaScript" type="text/javascript"><!--
+CB7.follow.simpleReplyValues['message-85-21'] = null;
+//--></script>
+ </span>
+ </a>
+ </li>
+ <li class="simpleReplyUserCollapse">
+ <a id="simpleReplyUserCounter-message-85-21" class="simpleReplyUserCount" href="#" onclick="CB7.follow.showSimpleReplyUsers(this, 'message', 85, 21, 'いいね！');return false;"><span id="simpleReplyUserCount-message-85-21"></span>名</a>
+ </li>
+ </ul>
+</div>
+</div>
+</div>
 <div class="vr_followWrapper" id="follow-root-17">
 <div class="vr_follow " id="follow-message-85-17" onmouseover="CB7.follow.selectComment('message-85-17')" onmouseout="CB7.follow.unselectComment('message-85-17')">
 <div class="vr_followUserImageColumn">
