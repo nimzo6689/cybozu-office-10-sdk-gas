@@ -1,5 +1,7 @@
 const cheerio = require('cheerio');
 
+import { Utils } from '../common/Helpers';
+
 /**
  * MyFolderMessage* （個人フォルダ内のメッセージ） ページの情報を JavaScript オブジェクトとして取得する。
  *

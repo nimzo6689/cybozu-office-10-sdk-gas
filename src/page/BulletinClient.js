@@ -1,3 +1,5 @@
+import { Utils } from '../common/Helpers';
+
 /**
  * Bulletin* （掲示板） ページの情報を JavaScript オブジェクトとして取得する。
  */
