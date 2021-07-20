@@ -1,3 +1,5 @@
+import Consts from '../common/Constants';
+
 /**
  * File* （ファイル管理） ページの情報を JavaScript オブジェクトとして取得する。
  */

@@ -1,5 +1,6 @@
 const cheerio = require('cheerio');
 
+import Consts from '../common/Constants';
 import { Utils } from '../common/Helpers';
 
 /**
