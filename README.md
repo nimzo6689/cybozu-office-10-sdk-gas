@@ -56,3 +56,7 @@ members.forEach(m => `ユーザーID: ${m.uID}, ユーザ名: ${m.userName}`);
 | ファイル管理 > ファイル                             | :x:                | :x:                | :x:                | :x:                | :x:                | :x:  | :x:                | :heavy_check_mark:     |
 | ユーザ名簿 > ユーザー情報                           | -                  | :x:                | :x:                | -                  | :heavy_check_mark: | -    | -                  | -                      |
 | スケジュール > 予定                                 | :x:                | :x:                | :x:                | :x:                | :x:                | :x:  | -                  | -                      |
+
+## その他
+
+[API ドキュメント][blob/main/docs/api.md]

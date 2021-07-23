@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack",
     "test": "jest",
-    "doc": "node ./node_modules/documentation/bin/documentation.js build src/** -f md -o docs/API.md --github"
+    "doc": "node ./node_modules/documentation/bin/documentation.js build src/page/** -f md -o docs/API.md --github --shallow=true"
   },
   "repository": {
     "type": "git",
