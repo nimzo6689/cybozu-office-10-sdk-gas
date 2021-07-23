@@ -59,4 +59,4 @@ members.forEach(m => `ユーザーID: ${m.uID}, ユーザ名: ${m.userName}`);
 
 ## その他
 
-[API ドキュメント][blob/main/docs/api.md]
+[API ドキュメント](blob/main/docs/api.md)
