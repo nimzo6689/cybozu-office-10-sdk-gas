@@ -69,13 +69,17 @@
 
 ## constructor
 
+[src/common/Helpers.js:8-11][65]
+
 CybozuOffice コンストラクタ関数
 
 ### Parameters
 
-*   `leastIntervalSec` **[number][65]** スリープ時間
+*   `leastIntervalSec` **[number][66]** スリープ時間
 
 ## CybozuTransport
+
+[src/common/Transport.js:10-155][67]
 
 **Extends LoadReductionCallable**
 
@@ -86,177 +90,215 @@ Cybozu Office 10 の操作を簡単にするための UrlFetchApp のラッパ�
 
 ### Parameters
 
-*   `baseUrl` **[string][66]** 処理対象となるサイボウズのURL（http~/ag.cgiまで）
-*   `accountId` **[string][66]** ログインID
-*   `password` **[string][66]** パスワード
-*   `sleepSec` **[string][66]** スリープ間隔（秒）
+*   `baseUrl` **[string][68]** 処理対象となるサイボウズのURL（http~/ag.cgiまで）
+*   `accountId` **[string][68]** ログインID
+*   `password` **[string][68]** パスワード
+*   `sleepSec` **[string][68]** スリープ間隔（秒）
 
 ### get
+
+[src/common/Transport.js:43-48][69]
 
 GET リクエスト用のエントリポイント
 
 #### Parameters
 
-*   `query` **[string][66]** リクエストクエリ文字列 (optional, default `null`)
+*   `query` **[string][68]** リクエストクエリ文字列 (optional, default `null`)
 
-Returns **[string][66]** RAW コンテント文字列
+Returns **[string][68]** RAW コンテント文字列
 
 ### getFile
+
+[src/common/Transport.js:58-67][70]
 
 ファイルの GET リクエスト用のエントリポイント
 
 #### Parameters
 
-*   `path` **[string][66]** パス（ファイル名）
-*   `query` **[string][66]** リクエストクエリ文字列
-*   `encoding` **[string][66]** エンコード形式
+*   `path` **[string][68]** パス（ファイル名）
+*   `query` **[string][68]** リクエストクエリ文字列
+*   `encoding` **[string][68]** エンコード形式
 
-Returns **[string][66]** RAW コンテント文字列
+Returns **[string][68]** RAW コンテント文字列
 
 ### post
+
+[src/common/Transport.js:74-80][71]
 
 POST リクエスト用のエントリポイント
 
 #### Parameters
 
-*   `body` **[string][66]** HTTP リクエストの Body
+*   `body` **[string][68]** HTTP リクエストの Body
 
 ### \_handleErrorResponse
 
+[src/common/Transport.js:114-120][72]
+
 #### Parameters
 
-*   `headers` **[Object][67]** ヘッダー情報
+*   `headers` **[Object][73]** ヘッダー情報
 
 ### \_renewLoginSession
+
+[src/common/Transport.js:129-154][74]
 
 サイボウズ Office10 にアクセスするために必要な認証情報を取得する。
 なお、取得した認証情報は CacheService.CYBOZU_SESSION_KEY へ格納する。
 
 #### Parameters
 
-*   `accountId` **[string][66]** ログインID
-*   `password` **[string][66]** パスワード
+*   `accountId` **[string][68]** ログインID
+*   `password` **[string][68]** パスワード
 
 ## CybozuOffice
+
+[src/index.js:12-31][75]
 
 Cybozu Office 10 の操作 API を提供。
 
 ### Parameters
 
-*   `baseUrl` **[string][66]** 処理対象となるサイボウズのURL（http~/ag.cgiまで）
-*   `accountId` **[string][66]** ログインID
-*   `password` **[string][66]** パスワード
-*   `sleepSec` **[string][66]** スリープ間隔（秒） (optional, default `1`)
+*   `baseUrl` **[string][68]** 処理対象となるサイボウズのURL（http~/ag.cgiまで）
+*   `accountId` **[string][68]** ログインID
+*   `password` **[string][68]** パスワード
+*   `sleepSec` **[string][68]** スリープ間隔（秒） (optional, default `1`)
 
 ## BulletinClient
+
+[src/page/BulletinClient.js:7-38][76]
 
 Bulletin\* （掲示板） ページの情報を JavaScript オブジェクトとして取得する。
 
 ### Parameters
 
-*   `transport` **[CybozuTransport][68]** サイボウズOffice10への通信オブジェクト
+*   `transport` **[CybozuTransport][77]** サイボウズOffice10への通信オブジェクト
 
 ### addFollow
+
+[src/page/BulletinClient.js:26-37][78]
 
 掲示板にコメントを書き込む。
 
 #### Parameters
 
-*   `bid` **[String][66]** 掲示板のURLに含まれているBID
-*   `data` **[String][66]** コメント文
-*   `group` **[String][66]** コメントする際に表示されるグループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
+*   `bid` **[String][68]** 掲示板のURLに含まれているBID
+*   `data` **[String][68]** コメント文
+*   `group` **[String][68]** コメントする際に表示されるグループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
 
 ## FileClient
+
+[src/page/FileClient.js:6-27][79]
 
 File\* （ファイル管理） ページの情報を JavaScript オブジェクトとして取得する。
 
 ### Parameters
 
-*   `transport` **[CybozuTransport][68]** サイボウズOffice10への通信オブジェクト
+*   `transport` **[CybozuTransport][77]** サイボウズOffice10への通信オブジェクト
 
 ### download
+
+[src/page/FileClient.js:24-26][80]
 
 ファイルをダウンロード
 
 #### Parameters
 
-*   `fileName` **[number][65]** ファイル名（）
-*   `query` **[number][65]** クエリ文字列
-*   `encoding` **[number][65]** 文字コード（utf-8, Shift_JIS） (optional, default `Consts.UTF_8`)
+*   `fileName` **[number][66]** ファイル名（）
+*   `query` **[number][66]** クエリ文字列
+*   `encoding` **[number][66]** 文字コード（utf-8, Shift_JIS） (optional, default `Consts.UTF_8`)
 
 ## FolderClient
+
+[src/page/FolderClient.js:5-76][81]
 
 MyFolder\* （個人フォルダ） ページの情報を JavaScript オブジェクトとして取得する。
 
 ### Parameters
 
-*   `transport` **[CybozuTransport][68]** サイボウズOffice10への通信オブジェクト
+*   `transport` **[CybozuTransport][77]** サイボウズOffice10への通信オブジェクト
 
 ### \_index
+
+[src/page/FolderClient.js:23-38][82]
 
 個人フォルダのメッセージ一覧を取得
 
 #### Parameters
 
-*   `folderId` **([number][65] | [string][66])** フォルダID（FID）
-*   `reversed` **[number][65]** 昇順フラグ（0は降順）
+*   `folderId` **([number][66] | [string][68])** フォルダID（FID）
+*   `reversed` **[number][66]** 昇順フラグ（0は降順）
 
 ### inbox
+
+[src/page/FolderClient.js:45-47][83]
 
 受信箱のメッセージ一覧を取得
 
 #### Parameters
 
-*   `reversed` **[number][65]** 昇順フラグ（0は降順） (optional, default `0`)
+*   `reversed` **[number][66]** 昇順フラグ（0は降順） (optional, default `0`)
 
 ### sent
+
+[src/page/FolderClient.js:54-56][84]
 
 送信箱のメッセージ一覧を取得
 
 #### Parameters
 
-*   `reversed` **[number][65]** 昇順フラグ（0は降順） (optional, default `0`)
+*   `reversed` **[number][66]** 昇順フラグ（0は降順） (optional, default `0`)
 
 ### unsent
+
+[src/page/FolderClient.js:63-65][85]
 
 下書きのメッセージ一覧を取得
 
 #### Parameters
 
-*   `reversed` **[number][65]** 昇順フラグ（0は降順） (optional, default `0`)
+*   `reversed` **[number][66]** 昇順フラグ（0は降順） (optional, default `0`)
 
 ### indexByFid
+
+[src/page/FolderClient.js:73-75][86]
 
 指定のフォルダ内のメッセージ一覧を取得
 
 #### Parameters
 
-*   `folderId` **[number][65]** フォルダID（FID）
-*   `reversed` **[number][65]** 昇順フラグ（0は降順） (optional, default `0`)
+*   `folderId` **[number][66]** フォルダID（FID）
+*   `reversed` **[number][66]** 昇順フラグ（0は降順） (optional, default `0`)
 
 ## MessageClient
+
+[src/page/MessageClient.js:10-309][87]
 
 MyFolderMessage\* （個人フォルダ内のメッセージ） ページの情報を JavaScript オブジェクトとして取得する。
 
 ### Parameters
 
-*   `transport` **[CybozuTransport][68]** サイボウズOffice10への通信オブジェクト
+*   `transport` **[CybozuTransport][77]** サイボウズOffice10への通信オブジェクト
 
 ### send
+
+[src/page/MessageClient.js:33-59][88]
 
 メッセージの送信
 
 #### Parameters
 
-*   `subject` **[String][66]** 標題
-*   `data` **[String][66]** コメント文
-*   `uidList` **[Array][69]** 宛先 UID リスト
-*   `group` **[String][66]** コメントする際に表示されるグループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
-*   `editableByReceivers` **[String][66]** 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可） (optional, default `1`)
-*   `useConfirm` **[String][66]** 閲覧状況を確認する（0: 無効, 1: 有効） (optional, default `0`)
-*   `simpleReplyEnable` **[String][66]** リアクションを許可する（0: 無許可, 1: 許可） (optional, default `1`)
+*   `subject` **[String][68]** 標題
+*   `data` **[String][68]** コメント文
+*   `uidList` **[Array][89]** 宛先 UID リスト
+*   `group` **[String][68]** コメントする際に表示されるグループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
+*   `editableByReceivers` **[String][68]** 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可） (optional, default `1`)
+*   `useConfirm` **[String][68]** 閲覧状況を確認する（0: 無効, 1: 有効） (optional, default `0`)
+*   `simpleReplyEnable` **[String][68]** リアクションを許可する（0: 無許可, 1: 許可） (optional, default `1`)
 
 ### view
+
+[src/page/MessageClient.js:64-66][90]
 
 Not supported yet.
 
@@ -267,126 +309,148 @@ Not supported yet.
 
 ### move
 
+[src/page/MessageClient.js:75-86][91]
+
 メッセージの移動
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用の ID
-*   `pID` **[number][65]** PID 用の ID
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用の ID
+*   `pID` **[number][66]** PID 用の ID
 
 ### viewFollows
+
+[src/page/MessageClient.js:96-128][92]
 
 コメントを取得する
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
-*   `hID` **[number][65]** OFFSET となる Follow ID (optional, default `null`)
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
+*   `hID` **[number][66]** OFFSET となる Follow ID (optional, default `null`)
 
-Returns **[Array][69]** コメントリスト
+Returns **[Array][89]** コメントリスト
 
 ### modify
+
+[src/page/MessageClient.js:142-168][93]
 
 メッセージの編集
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
-*   `subject` **[String][66]** 標題
-*   `data` **[String][66]** コメント文
-*   `group` **[String][66]** コメントする際に表示されるグループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
-*   `editableByReceivers` **[String][66]** 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可） (optional, default `1`)
-*   `useConfirm` **[String][66]** 閲覧状況を確認する（0: 無効, 1: 有効） (optional, default `0`)
-*   `simpleReplyEnable` **[String][66]** リアクションを許可する（0: 無許可, 1: 許可） (optional, default `1`)
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
+*   `subject` **[String][68]** 標題
+*   `data` **[String][68]** コメント文
+*   `group` **[String][68]** コメントする際に表示されるグループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
+*   `editableByReceivers` **[String][68]** 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可） (optional, default `1`)
+*   `useConfirm` **[String][68]** 閲覧状況を確認する（0: 無効, 1: 有効） (optional, default `0`)
+*   `simpleReplyEnable` **[String][68]** リアクションを許可する（0: 無許可, 1: 許可） (optional, default `1`)
 
 ### delete
+
+[src/page/MessageClient.js:176-187][94]
 
 メッセージの削除
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
 
 ### addFollow
+
+[src/page/MessageClient.js:197-209][95]
 
 コメントを書き込む
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
-*   `data` **[string][66]** コメント文
-*   `group` **[string][66]** グループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
+*   `data` **[string][68]** コメント文
+*   `group` **[string][68]** グループ名 (optional, default `Consts.DEFAULT_GROUP_NAME`)
 
 ### deleteFollow
+
+[src/page/MessageClient.js:218-228][96]
 
 コメントを削除する
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
-*   `followId` **[number][65]** follow ID
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
+*   `followId` **[number][66]** follow ID
 
 ### replySimple
+
+[src/page/MessageClient.js:239-253][97]
 
 いいね！
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
-*   `followId` **[number][65]** follow ID
-*   `cancel` **[string][66]** キャンセルフラグ（0: 正常、 1: キャンセル） (optional, default `0`)
-*   `mark` **[string][66]** マーク（'good', 'ok', 'smile', 'sad'） (optional, default `null`)
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
+*   `followId` **[number][66]** follow ID
+*   `cancel` **[string][68]** キャンセルフラグ（0: 正常、 1: キャンセル） (optional, default `0`)
+*   `mark` **[string][68]** マーク（'good', 'ok', 'smile', 'sad'） (optional, default `null`)
 
 ### viewReceivers
+
+[src/page/MessageClient.js:264-284][98]
 
 宛先を取得する
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
 
-Returns **[Array][69]<[Object][67]>** result 宛先リスト
+Returns **[Array][89]<[Object][73]>** result 宛先リスト
 
-Returns **[number][65]** result.uID - UID
+Returns **[number][66]** result.uID - UID
 
-Returns **[string][66]** result.userName - ユーザ名
+Returns **[string][68]** result.userName - ユーザ名
 
 ### modifyReceivers
+
+[src/page/MessageClient.js:294-308][99]
 
 宛先を修正する
 
 #### Parameters
 
-*   `mDBID` **[number][65]** mDBID(0~9)
-*   `mDID` **[number][65]** MID 用のID
-*   `eID` **[number][65]** EID 用のID
-*   `uidList` **[Array][69]<[number][65]>** 宛先 UID リスト
+*   `mDBID` **[number][66]** mDBID(0~9)
+*   `mDID` **[number][66]** MID 用のID
+*   `eID` **[number][66]** EID 用のID
+*   `uidList` **[Array][89]<[number][66]>** 宛先 UID リスト
 
 ## UserClient
+
+[src/page/UserClient.js:7-45][100]
 
 UserList\* （ユーザ名簿） ページの情報を JavaScript オブジェクトとして取得する。
 
 ### Parameters
 
-*   `transport` **[CybozuTransport][68]** サイボウズOffice10への通信オブジェクト
+*   `transport` **[CybozuTransport][77]** サイボウズOffice10への通信オブジェクト
 
 ### index
+
+[src/page/UserClient.js:25-44][101]
 
 グループ ID に所属する UID リストの取得
 
 #### Parameters
 
-*   `gid` **[number][65]** グループID
+*   `gid` **[number][66]** グループID
 
-Returns **[Array][69]<[number][65]>** 所属ユーザの UID リスト
+Returns **[Array][89]<[number][66]>** 所属ユーザの UID リスト
 
 [1]: #constructor
 
@@ -516,12 +580,76 @@ Returns **[Array][69]<[number][65]>** 所属ユーザの UID リスト
 
 [64]: #parameters-31
 
-[65]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[65]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/common/Helpers.js#L8-L11 "Source code on GitHub"
 
-[66]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[66]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[67]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/common/Transport.js#L10-L155 "Source code on GitHub"
 
-[68]: #cybozutransport
+[68]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[69]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[69]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/common/Transport.js#L43-L48 "Source code on GitHub"
+
+[70]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/common/Transport.js#L58-L67 "Source code on GitHub"
+
+[71]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/common/Transport.js#L74-L80 "Source code on GitHub"
+
+[72]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/common/Transport.js#L114-L120 "Source code on GitHub"
+
+[73]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[74]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/common/Transport.js#L129-L154 "Source code on GitHub"
+
+[75]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/index.js#L12-L31 "Source code on GitHub"
+
+[76]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/BulletinClient.js#L7-L38 "Source code on GitHub"
+
+[77]: #cybozutransport
+
+[78]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/BulletinClient.js#L26-L37 "Source code on GitHub"
+
+[79]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FileClient.js#L6-L27 "Source code on GitHub"
+
+[80]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FileClient.js#L24-L26 "Source code on GitHub"
+
+[81]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FolderClient.js#L5-L76 "Source code on GitHub"
+
+[82]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FolderClient.js#L23-L38 "Source code on GitHub"
+
+[83]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FolderClient.js#L45-L47 "Source code on GitHub"
+
+[84]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FolderClient.js#L54-L56 "Source code on GitHub"
+
+[85]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FolderClient.js#L63-L65 "Source code on GitHub"
+
+[86]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/FolderClient.js#L73-L75 "Source code on GitHub"
+
+[87]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L10-L309 "Source code on GitHub"
+
+[88]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L33-L59 "Source code on GitHub"
+
+[89]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[90]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L64-L66 "Source code on GitHub"
+
+[91]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L75-L86 "Source code on GitHub"
+
+[92]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L96-L128 "Source code on GitHub"
+
+[93]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L142-L168 "Source code on GitHub"
+
+[94]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L176-L187 "Source code on GitHub"
+
+[95]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L197-L209 "Source code on GitHub"
+
+[96]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L218-L228 "Source code on GitHub"
+
+[97]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L239-L253 "Source code on GitHub"
+
+[98]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L264-L284 "Source code on GitHub"
+
+[99]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/MessageClient.js#L294-L308 "Source code on GitHub"
+
+[100]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/UserClient.js#L7-L45 "Source code on GitHub"
+
+[101]: https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/dd440fe76a033e2ae5108600d542455f17e558ae/src/page/UserClient.js#L25-L44 "Source code on GitHub"
