@@ -26,7 +26,7 @@ export default class CybozuTransport extends LoadReductionCallable {
     this._baseUrl = baseUrl;
 
     // 過去取得しているセッション情報
-    this._session = JSON.parse(CacheService.getScriptCache().get(CybozuTransport.CYBOZU_SESSION_KEY)) || {};
+    this._session = JSON.parse(CacheService.getUserCache().get(CybozuTransport.CYBOZU_SESSION_KEY)) || {};
 
     if (!Object.keys(this._session).length) {
       // 初回実行時は最初にログイン処理をする。
@@ -150,6 +150,6 @@ export default class CybozuTransport extends LoadReductionCallable {
     // csrfTicketを取得するため、TOPページにアクセスする。
     const pageCsrfTicket = this.get();
     this._session.csrfTicket = /<input type="hidden" name="csrf_ticket" value="(.*?)">/i.exec(pageCsrfTicket)[1];
-    CacheService.getScriptCache().put(CybozuTransport.CYBOZU_SESSION_KEY, JSON.stringify(this._session), 21600);
+    CacheService.getUserCache().put(CybozuTransport.CYBOZU_SESSION_KEY, JSON.stringify(this._session), 21600);
   }
 }
