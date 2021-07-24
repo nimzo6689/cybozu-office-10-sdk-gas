@@ -59,4 +59,4 @@ members.forEach(m => `ユーザーID: ${m.uID}, ユーザ名: ${m.userName}`);
 
 ## その他
 
-[API ドキュメント](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/main/docs/API.md)
+[API ドキュメント](https://nimzo6689.github.io/cybozu-office-10-sdk-gas/)
