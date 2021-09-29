@@ -37,7 +37,7 @@ export class Utils {
     }
 
     return Object.entries(params)
-      .map(pair => pair.map(encodeURI).join('='))
+      .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
       .join('&');
   }
 
