@@ -1,8 +1,12 @@
+import CybozuTransport from '../common/Transport';
+
 /**
  * MyFolder* （個人フォルダ） ページの情報を JavaScript オブジェクトとして取得する。
  *
  */
 export default class FolderClient {
+  _pagePrefix: string;
+  _transport: CybozuTransport;
   /**
    * CybozuOffice コンストラクタ関数
    *

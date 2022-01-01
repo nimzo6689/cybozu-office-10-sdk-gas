@@ -2,12 +2,15 @@ const cheerio = require('cheerio');
 
 import Consts from '../common/Constants';
 import { Utils } from '../common/Helpers';
+import CybozuTransport from '../common/Transport';
 
 /**
  * MyFolderMessage* （個人フォルダ内のメッセージ） ページの情報を JavaScript オブジェクトとして取得する。
  *
  */
 export default class MessageClient {
+  _pagePrefix: string;
+  _transport: CybozuTransport;
   /**
    * CybozuOffice コンストラクタ関数
    *
@@ -100,7 +103,7 @@ export default class MessageClient {
       MID: mDID,
     };
     if (hID) {
-      body['hid'] = hID;
+      query['hid'] = hID;
     }
 
     const document = this._transport.get(query);

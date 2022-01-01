@@ -8,6 +8,9 @@ import { LoadReductionCallable, Utils } from './Helpers';
  *   必ず、インスタンスは１つのみ生成すること。（想定外のリクエストをしないため）
  */
 export default class CybozuTransport extends LoadReductionCallable {
+  _baseUrl: any;
+  _session: any;
+
   static get CYBOZU_SESSION_KEY() {
     return 'cybozu_session';
   }
@@ -42,7 +45,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    */
   get(query = null) {
     return this._call({
-      method: 'GET',
+      method: 'get',
       query: query,
     }).getContentText();
   }
@@ -57,7 +60,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    */
   getFile(path, query, encoding) {
     return this._call({
-      method: 'GET',
+      method: 'get',
       path: path,
       query: query,
     })
@@ -73,7 +76,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    */
   post(body) {
     this._call({
-      method: 'POST',
+      method: 'post',
       contentType: Consts.X_WWW_FORM_URLENCODED,
       body: `${body}&csrf_ticket=${this._session.csrfTicket}`,
     });
@@ -133,7 +136,7 @@ export default class CybozuTransport extends LoadReductionCallable {
     this._sleepIfNeeded();
 
     const loginResponse = UrlFetchApp.fetch(this._baseUrl, {
-      method: 'POST',
+      method: 'post',
       payload: `_Account=${accountId}&Password=${password}&_System=login&_Login=1&LoginMethod=2`,
       contentType: Consts.X_WWW_FORM_URLENCODED,
       // UrlFetchApp::fetch では、リダイレクト先にセッション情報が連携されないため、リダイレクトは無効にする必要がある。

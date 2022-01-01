@@ -1,9 +1,12 @@
 import Consts from '../common/Constants';
+import CybozuTransport from '../common/Transport';
 
 /**
  * File* （ファイル管理） ページの情報を JavaScript オブジェクトとして取得する。
  */
 export default class FileClient {
+  _pagePrefix: string;
+  _transport: CybozuTransport;
   /**
    * CybozuOffice コンストラクタ関数
    *

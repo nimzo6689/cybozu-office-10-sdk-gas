@@ -1,10 +1,14 @@
 const cheerio = require('cheerio');
 
+import CybozuTransport from '../common/Transport';
+
 /**
  * UserList* （ユーザ名簿） ページの情報を JavaScript オブジェクトとして取得する。
  *
  */
 export default class UserClient {
+  _pagePrefix: string;
+  _transport: CybozuTransport;
   /**
    * CybozuOffice コンストラクタ関数
    *
