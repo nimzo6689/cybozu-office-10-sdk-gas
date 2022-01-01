@@ -14,16 +14,15 @@ export default class Consts {
   static get DEFAULT_GROUP_NAME() {
     return 'サイボウズBot - Google Apps Script';
   }
+
+  public static MessageEditMode = class extends Consts {
+    // テキスト。
+    static get TEXT() {
+      return 0;
+    }
+    // 書式編集
+    static get HTML() {
+      return 1;
+    }
+  };
 }
-
-Consts.MessageEditMode = class MessageEditMode {
-  // テキスト。
-  static get TEXT() {
-    return 0;
-  }
-
-  // 書式編集
-  static get HTML() {
-    return 1;
-  }
-};

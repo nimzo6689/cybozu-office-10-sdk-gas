@@ -1,10 +1,13 @@
 import Consts from '../common/Constants';
 import { Utils } from '../common/Helpers';
+import CybozuTransport from '../common/Transport';
 
 /**
  * Bulletin* （掲示板） ページの情報を JavaScript オブジェクトとして取得する。
  */
 export default class BulletinClient {
+  _pagePrefix: string;
+  _transport: CybozuTransport;
   /**
    * CybozuOffice コンストラクタ関数
    *

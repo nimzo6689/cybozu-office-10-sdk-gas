@@ -10,6 +10,13 @@ import BulletinClient from './page/BulletinClient';
  *
  */
 export class CybozuOffice {
+  _transport: CybozuTransport;
+  message: MessageClient;
+  file: FileClient;
+  user: UserClient;
+  folder: FolderClient;
+  bulletin: BulletinClient;
+
   /**
    * CybozuOffice コンストラクタ関数
    *

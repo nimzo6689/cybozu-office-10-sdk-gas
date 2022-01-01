@@ -1,4 +1,6 @@
 export class LoadReductionCallable {
+  _leastInterval: any;
+  _lastRequestTime: any;
   /**
    * CybozuOffice コンストラクタ関数
    *
@@ -37,7 +39,7 @@ export class Utils {
     }
 
     return Object.entries(params)
-      .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+      .map(([key, value]) => `${key}=${encodeURIComponent('' + value)}`)
       .join('&');
   }
 
