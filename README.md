@@ -1,3 +1,5 @@
+[![CI Status](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/workflows/CI/badge.svg)](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/actions?workflow=CI)
+
 # サイボウズ Office 10 向けの Google Apps Script 用 SDK
 
 以下のプロジェクトに依存性があります。
