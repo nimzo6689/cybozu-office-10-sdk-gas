@@ -1,15 +1,14 @@
 [![CI Status](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/workflows/CI/badge.svg)](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/actions?workflow=CI)
 
-# サイボウズ Office 10 向けの Google Apps Script 用 SDK
+# 概要
 
-以下のプロジェクトに依存性があります。
-
-- Google Apps Script 用の webpack プラグイン [gas-webpack-plugin](https://github.com/fossamagna/gas-webpack-plugin)
-- HTML パーサー [cheerio](https://github.com/cheeriojs/cheerio)
-
-Script ID: `1lL-Cy5zFVjxDNzwtjuKxi22VtSNU6bSOodSrxSHeqkKCwJa2E8QrirL0`
+Google Apps Script で動作するサイボウズ Office 10 用の SDK です。
 
 ## 使い方
+
+以下の Script ID で公開しています。
+
+Script ID: `1lL-Cy5zFVjxDNzwtjuKxi22VtSNU6bSOodSrxSHeqkKCwJa2E8QrirL0`
 
 以下 Google Apps Script エディタ内でライブラリの参照名を `CybozuOfficeSDK` とした場合の実装例です。
 
