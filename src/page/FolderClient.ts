@@ -13,7 +13,7 @@ export default class FolderClient {
    * @constructor
    * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
    */
-  constructor(transport) {
+  constructor(transport: CybozuTransport) {
     this._pagePrefix = 'MyFolder';
     this._transport = transport;
   }
@@ -24,7 +24,7 @@ export default class FolderClient {
    * @param {number|string} folderId - フォルダID（FID）
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
-  _index(folderId, reversed) {
+  _index(folderId: number | string, reversed: number) {
     const query = {
       page: `${this._pagePrefix}Index`,
       FID: folderId,
@@ -46,7 +46,7 @@ export default class FolderClient {
    *
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
-  inbox(reversed = 0) {
+  inbox(reversed: number = 0) {
     return this._index('inbox', reversed);
   }
 
@@ -55,7 +55,7 @@ export default class FolderClient {
    *
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
-  sent(reversed = 0) {
+  sent(reversed: number = 0) {
     return this._index('sent', reversed);
   }
 
@@ -64,7 +64,7 @@ export default class FolderClient {
    *
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
-  unsent(reversed = 0) {
+  unsent(reversed: number = 0) {
     return this._index('unsent', reversed);
   }
 
@@ -74,7 +74,7 @@ export default class FolderClient {
    * @param {number} folderId - フォルダID（FID）
    * @param {number} reversed - 昇順フラグ（0は降順）
    */
-  indexByFid(folderId, reversed = 0) {
+  indexByFid(folderId: number, reversed: number = 0) {
     return this._index(folderId, reversed);
   }
 }

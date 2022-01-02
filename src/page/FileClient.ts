@@ -13,18 +13,19 @@ export default class FileClient {
    * @constructor
    * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
    */
-  constructor(transport) {
+  constructor(transport: CybozuTransport) {
     this._transport = transport;
   }
 
   /**
    * ファイルをダウンロード
    *
-   * @param {number} fileName  - ファイル名（）
-   * @param {number} query     - クエリ文字列
-   * @param {number} encoding  - 文字コード（utf-8, Shift_JIS）
+   * @param {string} fileName  - ファイル名（）
+   * @param {string} query     - クエリ文字列
+   * @param {string} encoding  - 文字コード（utf-8, Shift_JIS）
+   * @return {string} ファイルのコンテント
    */
-  download(fileName, query, encoding = Consts.UTF_8) {
+  download(fileName: string, query: string, encoding: string = Consts.UTF_8): string {
     return this._transport.getFile(fileName, query, encoding);
   }
 }

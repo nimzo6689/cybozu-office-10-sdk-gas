@@ -1,28 +1,13 @@
 export default class Consts {
-  static get X_WWW_FORM_URLENCODED() {
-    return 'application/x-www-form-urlencoded';
-  }
-
-  static get UTF_8() {
-    return 'utf-8';
-  }
-
-  static get SHIFT_JIS() {
-    return 'Shift_JIS';
-  }
-
-  static get DEFAULT_GROUP_NAME() {
-    return 'サイボウズBot - Google Apps Script';
-  }
+  static readonly X_WWW_FORM_URLENCODED = 'application/x-www-form-urlencoded';
+  static readonly UTF_8 = 'utf-8';
+  static readonly SHIFT_JIS = 'Shift_JIS';
+  static readonly DEFAULT_GROUP_NAME = 'サイボウズBot - Google Apps Script';
 
   public static MessageEditMode = class extends Consts {
     // テキスト。
-    static get TEXT() {
-      return 0;
-    }
+    static readonly TEXT = 0;
     // 書式編集
-    static get HTML() {
-      return 1;
-    }
+    static readonly HTML = 1;
   };
 }
