@@ -1,4 +1,4 @@
-const cheerio = require('cheerio');
+import cheerio from 'cheerio';
 
 import Consts from '../common/Constants';
 import { Utils } from '../common/Helpers';

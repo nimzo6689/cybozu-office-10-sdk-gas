@@ -1,4 +1,4 @@
-const cheerio = require('cheerio');
+import cheerio from 'cheerio';
 
 import CybozuTransport from '../common/Transport';
 
@@ -24,9 +24,9 @@ export default class UserClient {
    * グループ ID に所属する UID リストの取得
    *
    * @param {number} gid - グループID
-   * @return {number[]} 所属ユーザの UID リスト
+   * @return {{}[]} 所属ユーザの UID リスト
    */
-  index(gid: number): number[] {
+  index(gid: number): { uID: number }[] {
     const query = {
       page: `${this._pagePrefix}Index`,
       GID: gid,
