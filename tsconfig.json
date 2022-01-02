@@ -1,7 +1,17 @@
 {
+  "compileOnSave": false,
+  "buildOnSave": false,
   "compilerOptions": {
-    "sourceMap": true,
     "target": "ES5",
-    "module": "ES2015"
-  }
+    "module": "commonjs",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "outDir": "dist",
+    "noImplicitAny": false,
+    "declaration": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["__tests__/**/*.spec.ts"]
 }

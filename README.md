@@ -1,4 +1,4 @@
-# サイボウズ Office 10 を操作するための Google Apps Script 用の SDK
+# サイボウズ Office 10 向けの Google Apps Script 用 SDK
 
 以下のプロジェクトに依存性があります。
 
@@ -9,7 +9,7 @@ Script ID: `1lL-Cy5zFVjxDNzwtjuKxi22VtSNU6bSOodSrxSHeqkKCwJa2E8QrirL0`
 
 ## 使い方
 
-以下、 Google Apps Script エディタ内でライブラリの参照名を `CybozuOfficeSDK` とした場合を想定しています。
+以下 Google Apps Script エディタ内でライブラリの参照名を `CybozuOfficeSDK` とした場合の実装例です。
 
 ```js
 const loginId = 'xxxxxxx';

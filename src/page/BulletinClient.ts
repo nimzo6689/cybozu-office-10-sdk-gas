@@ -14,7 +14,7 @@ export default class BulletinClient {
    * @constructor
    * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
    */
-  constructor(transport) {
+  constructor(transport: CybozuTransport) {
     this._pagePrefix = 'Bulletin';
     this._transport = transport;
   }
@@ -26,7 +26,7 @@ export default class BulletinClient {
    * @param {String} data  - コメント文
    * @param {String} group - コメントする際に表示されるグループ名
    */
-  addFollow(bid, data, group = Consts.DEFAULT_GROUP_NAME) {
+  addFollow(bid: string, data: string, group: string = Consts.DEFAULT_GROUP_NAME): boolean {
     const body = {
       page: `Ajax${this._pagePrefix}FollowAdd`,
       EditMode: Consts.MessageEditMode.TEXT,

@@ -22,9 +22,9 @@ export default class CybozuTransport extends LoadReductionCallable {
    * @param {string} baseUrl      - 処理対象となるサイボウズのURL（http~/ag.cgiまで）
    * @param {string} accountId    - ログインID
    * @param {string} password     - パスワード
-   * @param {string} sleepSec     - スリープ間隔（秒）
+   * @param {number} sleepSec     - スリープ間隔（秒）
    */
-  constructor(baseUrl, accountId, password, sleepSec) {
+  constructor(baseUrl: string, accountId: string, password: string, sleepSec: number) {
     super(sleepSec);
     this._baseUrl = baseUrl;
 
@@ -43,7 +43,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    * @param {string} query - リクエストクエリ文字列
    * @return {string} RAW コンテント文字列
    */
-  get(query = null) {
+  get(query: string | {} = null): string {
     return this._call({
       method: 'get',
       query: query,
@@ -58,7 +58,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    * @param {string} encoding - エンコード形式
    * @return {string} RAW コンテント文字列
    */
-  getFile(path, query, encoding) {
+  getFile(path: string, query: string, encoding: string): string {
     return this._call({
       method: 'get',
       path: path,
@@ -74,7 +74,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    *
    * @param {string} body - HTTP リクエストの Body
    */
-  post(body) {
+  post(body: string) {
     this._call({
       method: 'post',
       contentType: Consts.X_WWW_FORM_URLENCODED,
@@ -114,7 +114,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    * @thrwos {Error} サイボウズのエラーコードをスローする
    * {@link https://jp.cybozu.help/ja/error/of10/ サイボウズ Office 10 エラーメッセージ一覧}
    */
-  _handleErrorResponse(headers) {
+  _handleErrorResponse(headers: object) {
     if (headers['x-cybozu-error'] !== undefined) {
       // サイボウズのエラーコードを返却
       // https://jp.cybozu.help/ja/error/of10/
@@ -129,7 +129,7 @@ export default class CybozuTransport extends LoadReductionCallable {
    * @param {string} accountId    - ログインID
    * @param {string} password     - パスワード
    */
-  _renewLoginSession(accountId, password) {
+  _renewLoginSession(accountId: string, password: string) {
     console.info('Renewing Login Session');
 
     // ログインリクエストを送信。

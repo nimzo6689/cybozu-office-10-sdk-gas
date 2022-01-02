@@ -1,13 +1,8 @@
 export class LoadReductionCallable {
-  _leastInterval: any;
-  _lastRequestTime: any;
-  /**
-   * CybozuOffice コンストラクタ関数
-   *
-   * @constructor
-   * @param {number} leastIntervalSec  - スリープ時間
-   */
-  constructor(leastIntervalSec) {
+  _leastInterval: number;
+  _lastRequestTime: number;
+
+  constructor(leastIntervalSec: number) {
     this._leastInterval = leastIntervalSec * 1000;
     this._lastRequestTime = new Date().getTime() - this._leastInterval;
   }
@@ -21,7 +16,7 @@ export class LoadReductionCallable {
 }
 
 export class Utils {
-  static addPair(kv, key, value) {
+  static addPair(kv: any, key: any, value: any) {
     if (typeof kv == 'string') {
       return `${kv}&${key}=${value}`;
     } else {
@@ -29,7 +24,7 @@ export class Utils {
     }
   }
 
-  static buildQuery(params) {
+  static buildQuery(params: string | {}) {
     if (!params) {
       return '';
     }
@@ -43,7 +38,7 @@ export class Utils {
       .join('&');
   }
 
-  static createCookieValue(agSessId) {
+  static createCookieValue(agSessId: string) {
     return `CBAccount=; expires=Thu, 01-Jan-1970 00:00:00 GMT; path=/cgi-bin/cbag/; AGSESSID=${agSessId}; path=/cgi-bin/cbag/; secure; HttpOnly`;
   }
 }
