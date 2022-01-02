@@ -1,6 +1,8 @@
 [![CI Status](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/workflows/CI/badge.svg)](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/actions?workflow=CI)
 
-# 概要
+# Cybozu Office 10 SDK for Google Apps Script
+
+## 概要
 
 Google Apps Script で動作するサイボウズ Office 10 用の SDK です。
 
