@@ -1,6 +1,6 @@
 {
   "name": "cybozu-office-10-sdk-gas",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Cybozu Office 10 SDK for Google Apps Script",
   "scripts": {
     "build": "webpack",
@@ -14,9 +14,10 @@
   },
   "keywords": [
     "google",
-    "gas"
+    "gas",
+    "cybozu"
   ],
-  "author": "nimzo6689",
+  "author": "nimzo6689 <nimzo6689+npm@gmail.com> (https://github.com/nimzo6689)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nimzo6689/cybozu-office-10-sdk-gas/issues"
@@ -40,5 +41,5 @@
     "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2"
   },
-  "private": true
+  "private": false
 }
