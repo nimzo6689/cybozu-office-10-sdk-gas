@@ -1,4 +1,5 @@
 [![CI Status](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/workflows/CI/badge.svg)](https://github.com/nimzo6689/cybozu-office-10-sdk-gas/actions?workflow=CI)
+[![Coverage Status](https://coveralls.io/repos/github/nimzo6689/cybozu-office-10-sdk-gas/badge.svg?branch=main)](https://coveralls.io/github/nimzo6689/cybozu-office-10-sdk-gas?branch=main)
 
 # Cybozu Office 10 SDK for Google Apps Script
 
