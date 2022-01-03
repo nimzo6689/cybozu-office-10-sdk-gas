@@ -11,12 +11,7 @@ import CybozuTransport from '../common/Transport';
 export default class MessageClient {
   _pagePrefix: string;
   _transport: CybozuTransport;
-  /**
-   * CybozuOffice コンストラクタ関数
-   *
-   * @constructor
-   * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
-   */
+
   constructor(transport: CybozuTransport) {
     this._pagePrefix = 'MyFolderMessage';
     this._transport = transport;
@@ -24,14 +19,6 @@ export default class MessageClient {
 
   /**
    * メッセージの送信
-   *
-   * @param {string} subject              - 標題
-   * @param {string} data                 - コメント文
-   * @param {Array}  uidList              - 宛先 UID リスト
-   * @param {string} group                - コメントする際に表示されるグループ名
-   * @param {number} editableByReceivers  - 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
-   * @param {number} useConfirm           - 閲覧状況を確認する（0: 無効, 1: 有効）
-   * @param {number} simpleReplyEnable    - リアクションを許可する（0: 無許可, 1: 許可）
    */
   send(
     subject: string,
@@ -70,10 +57,6 @@ export default class MessageClient {
 
   /**
    * メッセージの移動
-   *
-   * @param {number} mDBID                - mDBID(0~9)
-   * @param {number} mDID                 - MID 用の ID
-   * @param {number} pID                  - PID 用の ID
    */
   move(mDBID: number, mDID: number, pID: number) {
     const body = {
@@ -90,11 +73,6 @@ export default class MessageClient {
 
   /**
    * コメントを取得する
-   *
-   * @param {number} mDBID - mDBID(0~9)
-   * @param {number} mDID  - MID 用のID
-   * @param {number} hID   - OFFSET となる Follow ID
-   * @return {Array} コメントリスト
    */
   viewFollows(mDBID: number, mDID: number, hID: number = null): Array<any> {
     const query = {
@@ -132,15 +110,6 @@ export default class MessageClient {
 
   /**
    * メッセージの編集
-   *
-   * @param {number} mDBID                - mDBID(0~9)
-   * @param {number} mDID                 - MID 用のID
-   * @param {string} subject              - 標題
-   * @param {string} data                 - コメント文
-   * @param {string} group                - コメントする際に表示されるグループ名
-   * @param {number} editableByReceivers  - 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
-   * @param {number} useConfirm           - 閲覧状況を確認する（0: 無効, 1: 有効）
-   * @param {number} simpleReplyEnable    - リアクションを許可する（0: 無許可, 1: 許可）
    */
   modify(
     mDBID: number,
@@ -172,9 +141,6 @@ export default class MessageClient {
 
   /**
    * メッセージの削除
-   *
-   * @param {number} mDBID                - mDBID(0~9)
-   * @param {number} mDID                 - MID 用のID
    */
   delete(mDBID: number, mDID: number) {
     const body = {
@@ -191,11 +157,6 @@ export default class MessageClient {
 
   /**
    * コメントを書き込む
-   *
-   * @param {number} mDBID - mDBID(0~9)
-   * @param {number} mDID  - MID 用のID
-   * @param {string} data  - コメント文
-   * @param {string} group - グループ名
    */
   addFollow(mDBID: number, mDID: number, data: string, group: string = Consts.DEFAULT_GROUP_NAME) {
     const body = {
@@ -213,10 +174,6 @@ export default class MessageClient {
 
   /**
    * コメントを削除する
-   *
-   * @param {number} mDBID     - mDBID(0~9)
-   * @param {number} mDID      - MID 用のID
-   * @param {number} followId  - follow ID
    */
   deleteFollow(mDBID: number, mDID: number, followId: number) {
     const body = {
@@ -232,12 +189,6 @@ export default class MessageClient {
 
   /**
    * いいね！
-   *
-   * @param {number} mDBID     - mDBID(0~9)
-   * @param {number} mDID      - MID 用のID
-   * @param {number} followId  - follow ID
-   * @param {number} cancel    - キャンセルフラグ（0: 正常、 1: キャンセル）
-   * @param {string} mark      - マーク（'good', 'ok', 'smile', 'sad'）
    */
   replySimple(mDBID: number, mDID: number, followId: number, cancel: number = 0, mark: string = null) {
     const body = {
@@ -257,10 +208,6 @@ export default class MessageClient {
 
   /**
    * 宛先を取得する
-   *
-   * @param {number} mDBID - mDBID(0~9)
-   * @param {number} mDID  - MID 用のID
-   * @return {Object[]} result 宛先リスト
    */
   viewReceivers(mDBID: number, mDID: number): object[] {
     const query = {
@@ -286,11 +233,6 @@ export default class MessageClient {
 
   /**
    * 宛先を修正する
-   *
-   * @param {number} mDBID     - mDBID(0~9)
-   * @param {number} mDID      - MID 用のID
-   * @param {number} eID       - EID 用のID
-   * @param {number[]} uidList - 宛先 UID リスト
    */
   modifyReceivers(mDBID: number, mDID: number, eID: number, uidList: number[]) {
     const uidPairs = uidList.map(uid => `UID=${uid}`).join('&');

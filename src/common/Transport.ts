@@ -15,15 +15,6 @@ export default class CybozuTransport extends LoadReductionCallable {
     return 'cybozu_session';
   }
 
-  /**
-   * CybozuTransport コンストラクタ関数
-   *
-   * @constructor
-   * @param {string} baseUrl      - 処理対象となるサイボウズのURL（http~/ag.cgiまで）
-   * @param {string} accountId    - ログインID
-   * @param {string} password     - パスワード
-   * @param {number} sleepSec     - スリープ間隔（秒）
-   */
   constructor(baseUrl: string, accountId: string, password: string, sleepSec: number) {
     super(sleepSec);
     this._baseUrl = baseUrl;
@@ -37,12 +28,6 @@ export default class CybozuTransport extends LoadReductionCallable {
     }
   }
 
-  /**
-   * GET リクエスト用のエントリポイント
-   *
-   * @param {string} query - リクエストクエリ文字列
-   * @return {string} RAW コンテント文字列
-   */
   get(query: string | {} = null): string {
     return this._call({
       method: 'get',
@@ -50,14 +35,6 @@ export default class CybozuTransport extends LoadReductionCallable {
     }).getContentText();
   }
 
-  /**
-   * ファイルの GET リクエスト用のエントリポイント
-   *
-   * @param {string} path - パス（ファイル名）
-   * @param {string} query - リクエストクエリ文字列
-   * @param {string} encoding - エンコード形式
-   * @return {string} RAW コンテント文字列
-   */
   getFile(path: string, query: string, encoding: string): string {
     return this._call({
       method: 'get',
@@ -69,11 +46,6 @@ export default class CybozuTransport extends LoadReductionCallable {
       .trim();
   }
 
-  /**
-   * POST リクエスト用のエントリポイント
-   *
-   * @param {string} body - HTTP リクエストの Body
-   */
   post(body: string) {
     this._call({
       method: 'post',
@@ -110,8 +82,6 @@ export default class CybozuTransport extends LoadReductionCallable {
   }
 
   /**
-   * @param {Object} headers - ヘッダー情報
-   * @thrwos {Error} サイボウズのエラーコードをスローする
    * {@link https://jp.cybozu.help/ja/error/of10/ サイボウズ Office 10 エラーメッセージ一覧}
    */
   _handleErrorResponse(headers: object) {
@@ -122,13 +92,6 @@ export default class CybozuTransport extends LoadReductionCallable {
     }
   }
 
-  /**
-   * サイボウズ Office10 にアクセスするために必要な認証情報を取得する。
-   * なお、取得した認証情報は CacheService.CYBOZU_SESSION_KEY へ格納する。
-   *
-   * @param {string} accountId    - ログインID
-   * @param {string} password     - パスワード
-   */
   _renewLoginSession(accountId: string, password: string) {
     console.info('Renewing Login Session');
 

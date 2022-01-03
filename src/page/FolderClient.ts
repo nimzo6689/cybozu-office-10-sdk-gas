@@ -7,23 +7,12 @@ import CybozuTransport from '../common/Transport';
 export default class FolderClient {
   _pagePrefix: string;
   _transport: CybozuTransport;
-  /**
-   * CybozuOffice コンストラクタ関数
-   *
-   * @constructor
-   * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
-   */
+
   constructor(transport: CybozuTransport) {
     this._pagePrefix = 'MyFolder';
     this._transport = transport;
   }
 
-  /**
-   * 個人フォルダのメッセージ一覧を取得
-   *
-   * @param {number|string} folderId - フォルダID（FID）
-   * @param {number} reversed - 昇順フラグ（0は降順）
-   */
   _index(folderId: number | string, reversed: number) {
     const query = {
       page: `${this._pagePrefix}Index`,
@@ -43,8 +32,6 @@ export default class FolderClient {
 
   /**
    * 受信箱のメッセージ一覧を取得
-   *
-   * @param {number} reversed - 昇順フラグ（0は降順）
    */
   inbox(reversed: number = 0) {
     return this._index('inbox', reversed);
@@ -52,8 +39,6 @@ export default class FolderClient {
 
   /**
    * 送信箱のメッセージ一覧を取得
-   *
-   * @param {number} reversed - 昇順フラグ（0は降順）
    */
   sent(reversed: number = 0) {
     return this._index('sent', reversed);
@@ -61,8 +46,6 @@ export default class FolderClient {
 
   /**
    * 下書きのメッセージ一覧を取得
-   *
-   * @param {number} reversed - 昇順フラグ（0は降順）
    */
   unsent(reversed: number = 0) {
     return this._index('unsent', reversed);
@@ -70,9 +53,6 @@ export default class FolderClient {
 
   /**
    * 指定のフォルダ内のメッセージ一覧を取得
-   *
-   * @param {number} folderId - フォルダID（FID）
-   * @param {number} reversed - 昇順フラグ（0は降順）
    */
   indexByFid(folderId: number, reversed: number = 0) {
     return this._index(folderId, reversed);
