@@ -1,43 +1,33 @@
-const cheerio = require('cheerio');
+import cheerio from 'cheerio';
 
 import Consts from '../common/Constants';
 import { Utils } from '../common/Helpers';
+import CybozuTransport from '../common/Transport';
 
 /**
  * MyFolderMessage* （個人フォルダ内のメッセージ） ページの情報を JavaScript オブジェクトとして取得する。
  *
  */
 export default class MessageClient {
-  /**
-   * CybozuOffice コンストラクタ関数
-   *
-   * @constructor
-   * @param {CybozuTransport} transport  - サイボウズOffice10への通信オブジェクト
-   */
-  constructor(transport) {
+  _pagePrefix: string;
+  _transport: CybozuTransport;
+
+  constructor(transport: CybozuTransport) {
     this._pagePrefix = 'MyFolderMessage';
     this._transport = transport;
   }
 
   /**
    * メッセージの送信
-   *
-   * @param {String} subject              - 標題
-   * @param {String} data                 - コメント文
-   * @param {Array}  uidList              - 宛先 UID リスト
-   * @param {String} group                - コメントする際に表示されるグループ名
-   * @param {String} editableByReceivers  - 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
-   * @param {String} useConfirm           - 閲覧状況を確認する（0: 無効, 1: 有効）
-   * @param {String} simpleReplyEnable    - リアクションを許可する（0: 無許可, 1: 許可）
    */
   send(
-    subject,
-    data,
-    uidList,
-    group = Consts.DEFAULT_GROUP_NAME,
-    editableByReceivers = 1,
-    useConfirm = 0,
-    simpleReplyEnable = 1
+    subject: string,
+    data: string,
+    uidList: number[],
+    group: string = Consts.DEFAULT_GROUP_NAME,
+    editableByReceivers: number = 1,
+    useConfirm: number = 0,
+    simpleReplyEnable: number = 1
   ) {
     const uidPairs = uidList.map(uid => `UID=${uid}`).join('&');
 
@@ -61,18 +51,14 @@ export default class MessageClient {
   /**
    * Not supported yet.
    */
-  view(mDBID, mDID) {
+  view(_mDBID: number, _mDID: number) {
     throw new Error('Not supported yet.');
   }
 
   /**
    * メッセージの移動
-   *
-   * @param {number} mDBID                - mDBID(0~9)
-   * @param {number} mDID                 - MID 用の ID
-   * @param {number} pID                  - PID 用の ID
    */
-  move(mDBID, mDID, pID) {
+  move(mDBID: number, mDID: number, pID: number) {
     const body = {
       page: `${this._pagePrefix}View`,
       DBID: mDBID,
@@ -87,31 +73,26 @@ export default class MessageClient {
 
   /**
    * コメントを取得する
-   *
-   * @param {number} mDBID - mDBID(0~9)
-   * @param {number} mDID  - MID 用のID
-   * @param {number} hID   - OFFSET となる Follow ID
-   * @return {Array} コメントリスト
    */
-  viewFollows(mDBID, mDID, hID = null) {
+  viewFollows(mDBID: number, mDID: number, hID: number = null): Array<any> {
     const query = {
       page: `Ajax${this._pagePrefix}FollowNavi`,
       DBID: mDBID,
       MID: mDID,
     };
     if (hID) {
-      body['hid'] = hID;
+      query['hid'] = hID;
     }
 
     const document = this._transport.get(query);
     const $ = cheerio.load(document);
 
     return $('#Follows > div')
-      .map((i, el) => {
+      .map((__: any, el: any) => {
         const parsed = $(el);
 
         const attached = parsed.find('.vr_viewContentsAttach td:first-child a').attr('href');
-        let _, attachedFile, attachedQuery;
+        let _: any, attachedFile: string, attachedQuery: string;
         if (attached) {
           [_, attachedFile, attachedQuery] = attached.split(/[/?]/);
           attachedQuery = attachedQuery.replace(/&amp;/gi, '&');
@@ -129,25 +110,16 @@ export default class MessageClient {
 
   /**
    * メッセージの編集
-   *
-   * @param {number} mDBID                - mDBID(0~9)
-   * @param {number} mDID                 - MID 用のID
-   * @param {String} subject              - 標題
-   * @param {String} data                 - コメント文
-   * @param {String} group                - コメントする際に表示されるグループ名
-   * @param {String} editableByReceivers  - 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
-   * @param {String} useConfirm           - 閲覧状況を確認する（0: 無効, 1: 有効）
-   * @param {String} simpleReplyEnable    - リアクションを許可する（0: 無許可, 1: 許可）
    */
   modify(
-    mDBID,
-    mDID,
-    subject,
-    data,
-    group = Consts.DEFAULT_GROUP_NAME,
-    editableByReceivers = 1,
-    useConfirm = 0,
-    simpleReplyEnable = 1
+    mDBID: number,
+    mDID: number,
+    subject: string,
+    data: string,
+    group: string = Consts.DEFAULT_GROUP_NAME,
+    editableByReceivers: number = 1,
+    useConfirm: number = 0,
+    simpleReplyEnable: number = 1
   ) {
     const body = {
       page: `${this._pagePrefix}Modify`,
@@ -169,11 +141,8 @@ export default class MessageClient {
 
   /**
    * メッセージの削除
-   *
-   * @param {number} mDBID                - mDBID(0~9)
-   * @param {number} mDID                 - MID 用のID
    */
-  delete(mDBID, mDID) {
+  delete(mDBID: number, mDID: number) {
     const body = {
       page: `${this._pagePrefix}Delete`,
       DBID: mDBID,
@@ -188,13 +157,8 @@ export default class MessageClient {
 
   /**
    * コメントを書き込む
-   *
-   * @param {number} mDBID - mDBID(0~9)
-   * @param {number} mDID  - MID 用のID
-   * @param {string} data  - コメント文
-   * @param {string} group - グループ名
    */
-  addFollow(mDBID, mDID, data, group = Consts.DEFAULT_GROUP_NAME) {
+  addFollow(mDBID: number, mDID: number, data: string, group: string = Consts.DEFAULT_GROUP_NAME) {
     const body = {
       page: `Ajax${this._pagePrefix}FollowAdd`,
       EditMode: Consts.MessageEditMode.TEXT,
@@ -210,12 +174,8 @@ export default class MessageClient {
 
   /**
    * コメントを削除する
-   *
-   * @param {number} mDBID     - mDBID(0~9)
-   * @param {number} mDID      - MID 用のID
-   * @param {number} followId  - follow ID
    */
-  deleteFollow(mDBID, mDID, followId) {
+  deleteFollow(mDBID: number, mDID: number, followId: number) {
     const body = {
       page: `Ajax${this._pagePrefix}FollowDelete`,
       FRID: followId,
@@ -229,14 +189,8 @@ export default class MessageClient {
 
   /**
    * いいね！
-   *
-   * @param {number} mDBID     - mDBID(0~9)
-   * @param {number} mDID      - MID 用のID
-   * @param {number} followId  - follow ID
-   * @param {string} cancel    - キャンセルフラグ（0: 正常、 1: キャンセル）
-   * @param {string} mark      - マーク（'good', 'ok', 'smile', 'sad'）
    */
-  replySimple(mDBID, mDID, followId, cancel = 0, mark = null) {
+  replySimple(mDBID: number, mDID: number, followId: number, cancel: number = 0, mark: string = null) {
     const body = {
       page: `AjaxSimpleReply`,
       Cancel: cancel,
@@ -254,14 +208,8 @@ export default class MessageClient {
 
   /**
    * 宛先を取得する
-   *
-   * @param {number} mDBID - mDBID(0~9)
-   * @param {number} mDID  - MID 用のID
-   * @return {Object[]} result 宛先リスト
-   * @return {number} result.uID - UID
-   * @return {string} result.userName - ユーザ名
    */
-  viewReceivers(mDBID, mDID) {
+  viewReceivers(mDBID: number, mDID: number): object[] {
     const query = {
       page: `${this._pagePrefix}ReceiverAdd`,
       DBID: mDBID,
@@ -272,7 +220,7 @@ export default class MessageClient {
     const $ = cheerio.load(document);
 
     return $('select[name="UID"] > option')
-      .map((i, elem) => {
+      .map((_: any, elem: any) => {
         const parsed = $(elem);
         return {
           uID: Number(parsed.val()),
@@ -280,18 +228,13 @@ export default class MessageClient {
         };
       })
       .toArray()
-      .filter(e => e.uID !== 0);
+      .filter((e: { uID: number }) => e.uID !== 0);
   }
 
   /**
    * 宛先を修正する
-   *
-   * @param {number} mDBID     - mDBID(0~9)
-   * @param {number} mDID      - MID 用のID
-   * @param {number} eID       - EID 用のID
-   * @param {number[]} uidList - 宛先 UID リスト
    */
-  modifyReceivers(mDBID, mDID, eID, uidList) {
+  modifyReceivers(mDBID: number, mDID: number, eID: number, uidList: number[]) {
     const uidPairs = uidList.map(uid => `UID=${uid}`).join('&');
 
     const body = {

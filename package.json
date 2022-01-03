@@ -1,11 +1,12 @@
 {
   "name": "cybozu-office-10-sdk-gas",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Cybozu Office 10 SDK for Google Apps Script",
   "scripts": {
     "build": "webpack",
+    "watch": "webpack -w",
     "test": "jest",
-    "doc": "node ./node_modules/documentation/bin/documentation.js build src/page/** -f md -o docs/API.md --github --shallow=true"
+    "doc": "typedoc --out ./docs/ ./src/"
   },
   "repository": {
     "type": "git",
@@ -13,25 +14,29 @@
   },
   "keywords": [
     "google",
-    "gas"
+    "gas",
+    "cybozu"
   ],
-  "author": "nimzo6689",
+  "author": "nimzo6689 <nimzo6689+npm@gmail.com> (https://github.com/nimzo6689)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nimzo6689/cybozu-office-10-sdk-gas/issues"
   },
   "homepage": "https://github.com/nimzo6689/cybozu-office-10-sdk-gas#readme",
   "dependencies": {
+    "@types/google-apps-script": "^1.0.41",
     "cheerio": "^1.0.0-rc.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "babel-loader": "^8.2.2",
-    "documentation": "^13.2.5",
+    "@types/jest": "^27.4.0",
     "gas-webpack-plugin": "^2.0.2",
     "jest": "^27.0.6",
+    "ts-jest": "^27.1.2",
+    "ts-loader": "^9.2.6",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4",
     "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2"
-  }
+  },
+  "private": false
 }
