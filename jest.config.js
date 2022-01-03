@@ -22,4 +22,5 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  coveragePathIgnorePatterns: ['/node_modules/'],
 };
