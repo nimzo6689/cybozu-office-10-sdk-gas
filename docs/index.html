@@ -1,1775 +1,238 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>cybozu-office-10-sdk-gas 1.0.0 | Documentation</title>
-    <meta name="description" content="Cybozu Office 10 SDK for Google Apps Script" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link href="assets/bass.css" rel="stylesheet" />
-    <link href="assets/style.css" rel="stylesheet" />
-    <link href="assets/github.css" rel="stylesheet" />
-    <link href="assets/split.css" rel="stylesheet" />
-  </head>
-  <body class="documentation m0">
-    <div class="flex">
-      <div id="split-left" class="overflow-auto fs0 height-viewport-100">
-        <div class="py1 px2">
-          <h3 class="mb0 no-anchor">cybozu-office-10-sdk-gas</h3>
-          <div class="mb1"><code>1.0.0</code></div>
-          <input
-            placeholder="Filter"
-            id="filter-input"
-            class="col12 block input"
-            spellcheck="false"
-            autocapitalize="off"
-            autocorrect="off"
-            type="text"
-          />
-          <div id="toc">
-            <ul class="list-reset h5 py1-ul">
-              <li>
-                <a href="#folderclient" class="toggle-sibling">
-                  FolderClient
-                  <span class="icon">▸</span>
-                </a>
-
-                <div class="toggle-target display-none">
-                  <ul class="list-reset py1-ul pl1">
-                    <li class="h5"><span>Instance members</span></li>
-
-                    <li><a href="#folderclient_index" class="regular pre-open"> #_index </a></li>
-
-                    <li><a href="#folderclientinbox" class="regular pre-open"> #inbox </a></li>
-
-                    <li><a href="#folderclientsent" class="regular pre-open"> #sent </a></li>
-
-                    <li><a href="#folderclientunsent" class="regular pre-open"> #unsent </a></li>
-
-                    <li><a href="#folderclientindexbyfid" class="regular pre-open"> #indexByFid </a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <li>
-                <a href="#fileclient" class="toggle-sibling">
-                  FileClient
-                  <span class="icon">▸</span>
-                </a>
-
-                <div class="toggle-target display-none">
-                  <ul class="list-reset py1-ul pl1">
-                    <li class="h5"><span>Instance members</span></li>
-
-                    <li><a href="#fileclientdownload" class="regular pre-open"> #download </a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <li>
-                <a href="#bulletinclient" class="toggle-sibling">
-                  BulletinClient
-                  <span class="icon">▸</span>
-                </a>
-
-                <div class="toggle-target display-none">
-                  <ul class="list-reset py1-ul pl1">
-                    <li class="h5"><span>Instance members</span></li>
-
-                    <li><a href="#bulletinclientaddfollow" class="regular pre-open"> #addFollow </a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <li>
-                <a href="#userclient" class="toggle-sibling">
-                  UserClient
-                  <span class="icon">▸</span>
-                </a>
-
-                <div class="toggle-target display-none">
-                  <ul class="list-reset py1-ul pl1">
-                    <li class="h5"><span>Instance members</span></li>
-
-                    <li><a href="#userclientindex" class="regular pre-open"> #index </a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <li>
-                <a href="#messageclient" class="toggle-sibling">
-                  MessageClient
-                  <span class="icon">▸</span>
-                </a>
-
-                <div class="toggle-target display-none">
-                  <ul class="list-reset py1-ul pl1">
-                    <li class="h5"><span>Instance members</span></li>
-
-                    <li><a href="#messageclientsend" class="regular pre-open"> #send </a></li>
-
-                    <li><a href="#messageclientview" class="regular pre-open"> #view </a></li>
-
-                    <li><a href="#messageclientmove" class="regular pre-open"> #move </a></li>
-
-                    <li><a href="#messageclientviewfollows" class="regular pre-open"> #viewFollows </a></li>
-
-                    <li><a href="#messageclientmodify" class="regular pre-open"> #modify </a></li>
-
-                    <li><a href="#messageclientdelete" class="regular pre-open"> #delete </a></li>
-
-                    <li><a href="#messageclientaddfollow" class="regular pre-open"> #addFollow </a></li>
-
-                    <li><a href="#messageclientdeletefollow" class="regular pre-open"> #deleteFollow </a></li>
-
-                    <li><a href="#messageclientreplysimple" class="regular pre-open"> #replySimple </a></li>
-
-                    <li><a href="#messageclientviewreceivers" class="regular pre-open"> #viewReceivers </a></li>
-
-                    <li><a href="#messageclientmodifyreceivers" class="regular pre-open"> #modifyReceivers </a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="mt1 h6 quiet">
-            <a href="https://documentation.js.org/reading-documentation.html">Need help reading this?</a>
-          </div>
-        </div>
-      </div>
-      <div id="split-right" class="relative overflow-auto height-viewport-100">
-        <section class="p2 mb2 clearfix bg-white minishadow">
-          <div class="clearfix">
-            <h3 class="fl m0" id="folderclient">FolderClient</h3>
-
-            <a
-              class="fr fill-darken0 round round pad1x quiet h5"
-              href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FolderClient.js#L5-L76"
-            >
-              <span>src/page/FolderClient.js</span>
-            </a>
-          </div>
-
-          <p>MyFolder* （個人フォルダ） ページの情報を JavaScript オブジェクトとして取得する。</p>
-
-          <div class="pre p1 fill-light mt0">new FolderClient(transport: CybozuTransport)</div>
-
-          <div class="py1 quiet mt1 prose-big">Parameters</div>
-          <div class="prose">
-            <div class="space-bottom0">
-              <div>
-                <span class="code bold">transport</span> <code class="quiet">(CybozuTransport)</code>
-                サイボウズOffice10への通信オブジェクト
-              </div>
-            </div>
-          </div>
-
-          <div class="py1 quiet mt1 prose-big">Instance Members</div>
-          <div class="clearfix">
-            <div class="border-bottom" id="folderclient_index">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">_index(folderId, reversed)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FolderClient.js#L23-L38"
-                    >
-                      <span>src/page/FolderClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>個人フォルダのメッセージ一覧を取得</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    _index(folderId: (<a
-                      href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >
-                    |
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >string</a
-                    >), reversed:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">folderId</span>
-                        <code class="quiet"
-                          >((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >
-                          |
-                          <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >string</a
-                          >))</code
-                        >
-                        フォルダID（FID）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">reversed</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        昇順フラグ（0は降順）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="folderclientinbox">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">inbox(reversed)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FolderClient.js#L45-L47"
-                    >
-                      <span>src/page/FolderClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>受信箱のメッセージ一覧を取得</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    inbox(reversed:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">reversed</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >
-                          = <code>0</code>)</code
-                        >
-                        昇順フラグ（0は降順）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="folderclientsent">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">sent(reversed)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FolderClient.js#L54-L56"
-                    >
-                      <span>src/page/FolderClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>送信箱のメッセージ一覧を取得</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    sent(reversed:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">reversed</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >
-                          = <code>0</code>)</code
-                        >
-                        昇順フラグ（0は降順）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="folderclientunsent">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">unsent(reversed)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FolderClient.js#L63-L65"
-                    >
-                      <span>src/page/FolderClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>下書きのメッセージ一覧を取得</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    unsent(reversed:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">reversed</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >
-                          = <code>0</code>)</code
-                        >
-                        昇順フラグ（0は降順）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="folderclientindexbyfid">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">indexByFid(folderId, reversed)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FolderClient.js#L73-L75"
-                    >
-                      <span>src/page/FolderClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>指定のフォルダ内のメッセージ一覧を取得</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    indexByFid(folderId:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, reversed:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">folderId</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        フォルダID（FID）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">reversed</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >
-                          = <code>0</code>)</code
-                        >
-                        昇順フラグ（0は降順）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="p2 mb2 clearfix bg-white minishadow">
-          <div class="clearfix">
-            <h3 class="fl m0" id="fileclient">FileClient</h3>
-
-            <a
-              class="fr fill-darken0 round round pad1x quiet h5"
-              href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FileClient.js#L6-L27"
-            >
-              <span>src/page/FileClient.js</span>
-            </a>
-          </div>
-
-          <p>File* （ファイル管理） ページの情報を JavaScript オブジェクトとして取得する。</p>
-
-          <div class="pre p1 fill-light mt0">new FileClient(transport: CybozuTransport)</div>
-
-          <div class="py1 quiet mt1 prose-big">Parameters</div>
-          <div class="prose">
-            <div class="space-bottom0">
-              <div>
-                <span class="code bold">transport</span> <code class="quiet">(CybozuTransport)</code>
-                サイボウズOffice10への通信オブジェクト
-              </div>
-            </div>
-          </div>
-
-          <div class="py1 quiet mt1 prose-big">Instance Members</div>
-          <div class="clearfix">
-            <div class="border-bottom" id="fileclientdownload">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">download(fileName, query, encoding)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/FileClient.js#L24-L26"
-                    >
-                      <span>src/page/FileClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>ファイルをダウンロード</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    download(fileName:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, query:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, encoding:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">fileName</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        ファイル名（）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">query</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        クエリ文字列
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">encoding</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >
-                          = <code>Consts.UTF_8</code>)</code
-                        >
-                        文字コード（utf-8, Shift_JIS）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="p2 mb2 clearfix bg-white minishadow">
-          <div class="clearfix">
-            <h3 class="fl m0" id="bulletinclient">BulletinClient</h3>
-
-            <a
-              class="fr fill-darken0 round round pad1x quiet h5"
-              href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/BulletinClient.js#L7-L38"
-            >
-              <span>src/page/BulletinClient.js</span>
-            </a>
-          </div>
-
-          <p>Bulletin* （掲示板） ページの情報を JavaScript オブジェクトとして取得する。</p>
-
-          <div class="pre p1 fill-light mt0">new BulletinClient(transport: CybozuTransport)</div>
-
-          <div class="py1 quiet mt1 prose-big">Parameters</div>
-          <div class="prose">
-            <div class="space-bottom0">
-              <div>
-                <span class="code bold">transport</span> <code class="quiet">(CybozuTransport)</code>
-                サイボウズOffice10への通信オブジェクト
-              </div>
-            </div>
-          </div>
-
-          <div class="py1 quiet mt1 prose-big">Instance Members</div>
-          <div class="clearfix">
-            <div class="border-bottom" id="bulletinclientaddfollow">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">addFollow(bid, data, group)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/BulletinClient.js#L26-L37"
-                    >
-                      <span>src/page/BulletinClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>掲示板にコメントを書き込む。</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    addFollow(bid:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, data:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, group:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">bid</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >)</code
-                        >
-                        掲示板のURLに含まれているBID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">data</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >)</code
-                        >
-                        コメント文
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">group</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>Consts.DEFAULT_GROUP_NAME</code>)</code
-                        >
-                        コメントする際に表示されるグループ名
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="p2 mb2 clearfix bg-white minishadow">
-          <div class="clearfix">
-            <h3 class="fl m0" id="userclient">UserClient</h3>
-
-            <a
-              class="fr fill-darken0 round round pad1x quiet h5"
-              href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/UserClient.js#L7-L45"
-            >
-              <span>src/page/UserClient.js</span>
-            </a>
-          </div>
-
-          <p>UserList* （ユーザ名簿） ページの情報を JavaScript オブジェクトとして取得する。</p>
-
-          <div class="pre p1 fill-light mt0">new UserClient(transport: CybozuTransport)</div>
-
-          <div class="py1 quiet mt1 prose-big">Parameters</div>
-          <div class="prose">
-            <div class="space-bottom0">
-              <div>
-                <span class="code bold">transport</span> <code class="quiet">(CybozuTransport)</code>
-                サイボウズOffice10への通信オブジェクト
-              </div>
-            </div>
-          </div>
-
-          <div class="py1 quiet mt1 prose-big">Instance Members</div>
-          <div class="clearfix">
-            <div class="border-bottom" id="userclientindex">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">index(gid)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/UserClient.js#L25-L44"
-                    >
-                      <span>src/page/UserClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>グループ ID に所属する UID リストの取得</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    index(gid:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >):
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a
-                    >&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >>
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">gid</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        グループID
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Returns</div>
-                  <code
-                    ><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a
-                    >&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >></code
-                  >: 所属ユーザの UID リスト
-                </section>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="p2 mb2 clearfix bg-white minishadow">
-          <div class="clearfix">
-            <h3 class="fl m0" id="messageclient">MessageClient</h3>
-
-            <a
-              class="fr fill-darken0 round round pad1x quiet h5"
-              href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L10-L309"
-            >
-              <span>src/page/MessageClient.js</span>
-            </a>
-          </div>
-
-          <p>MyFolderMessage* （個人フォルダ内のメッセージ） ページの情報を JavaScript オブジェクトとして取得する。</p>
-
-          <div class="pre p1 fill-light mt0">new MessageClient(transport: CybozuTransport)</div>
-
-          <div class="py1 quiet mt1 prose-big">Parameters</div>
-          <div class="prose">
-            <div class="space-bottom0">
-              <div>
-                <span class="code bold">transport</span> <code class="quiet">(CybozuTransport)</code>
-                サイボウズOffice10への通信オブジェクト
-              </div>
-            </div>
-          </div>
-
-          <div class="py1 quiet mt1 prose-big">Instance Members</div>
-          <div class="clearfix">
-            <div class="border-bottom" id="messageclientsend">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate"
-                    >send(subject, data, uidList, group, editableByReceivers, useConfirm, simpleReplyEnable)</span
-                  >
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L33-L59"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>メッセージの送信</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    send(subject:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, data:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, uidList:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a
-                    >, group:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, editableByReceivers:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, useConfirm:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, simpleReplyEnable:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">subject</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >)</code
-                        >
-                        標題
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">data</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >)</code
-                        >
-                        コメント文
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">uidList</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array"
-                            >Array</a
-                          >)</code
-                        >
-                        宛先 UID リスト
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">group</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>Consts.DEFAULT_GROUP_NAME</code>)</code
-                        >
-                        コメントする際に表示されるグループ名
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">editableByReceivers</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>1</code>)</code
-                        >
-                        宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">useConfirm</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>0</code>)</code
-                        >
-                        閲覧状況を確認する（0: 無効, 1: 有効）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">simpleReplyEnable</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>1</code>)</code
-                        >
-                        リアクションを許可する（0: 無許可, 1: 許可）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientview">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">view(mDBID, mDID)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L64-L66"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>Not supported yet.</p>
-
-                  <div class="pre p1 fill-light mt0">view(mDBID: any, mDID: any)</div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div><span class="code bold">mDBID</span> <code class="quiet">(any)</code></div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div><span class="code bold">mDID</span> <code class="quiet">(any)</code></div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientmove">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">move(mDBID, mDID, pID)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L75-L86"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>メッセージの移動</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    move(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, pID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用の ID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">pID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        PID 用の ID
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientviewfollows">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">viewFollows(mDBID, mDID, hID)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L96-L128"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>コメントを取得する</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    viewFollows(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, hID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >):
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">hID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >
-                          = <code>null</code>)</code
-                        >
-                        OFFSET となる Follow ID
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Returns</div>
-                  <code
-                    ><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array"
-                      >Array</a
-                    ></code
-                  >: コメントリスト
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientmodify">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate"
-                    >modify(mDBID, mDID, subject, data, group, editableByReceivers, useConfirm, simpleReplyEnable)</span
-                  >
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L142-L168"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>メッセージの編集</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    modify(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, subject:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, data:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, group:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, editableByReceivers:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, useConfirm:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >, simpleReplyEnable:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >String</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">subject</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >)</code
-                        >
-                        標題
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">data</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >)</code
-                        >
-                        コメント文
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">group</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>Consts.DEFAULT_GROUP_NAME</code>)</code
-                        >
-                        コメントする際に表示されるグループ名
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">editableByReceivers</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>1</code>)</code
-                        >
-                        宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">useConfirm</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>0</code>)</code
-                        >
-                        閲覧状況を確認する（0: 無効, 1: 有効）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">simpleReplyEnable</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >String</a
-                          >
-                          = <code>1</code>)</code
-                        >
-                        リアクションを許可する（0: 無許可, 1: 許可）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientdelete">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">delete(mDBID, mDID)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L176-L187"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>メッセージの削除</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    delete(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientaddfollow">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">addFollow(mDBID, mDID, data, group)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L197-L209"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>コメントを書き込む</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    addFollow(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, data:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >string</a
-                    >, group:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >string</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">data</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >string</a
-                          >)</code
-                        >
-                        コメント文
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">group</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >string</a
-                          >
-                          = <code>Consts.DEFAULT_GROUP_NAME</code>)</code
-                        >
-                        グループ名
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientdeletefollow">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">deleteFollow(mDBID, mDID, followId)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L218-L228"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>コメントを削除する</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    deleteFollow(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, followId:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">followId</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        follow ID
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientreplysimple">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">replySimple(mDBID, mDID, followId, cancel, mark)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L239-L253"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>いいね！</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    replySimple(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, followId:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, cancel:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >string</a
-                    >, mark:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >string</a
-                    >)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">followId</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        follow ID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">cancel</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >string</a
-                          >
-                          = <code>0</code>)</code
-                        >
-                        キャンセルフラグ（0: 正常、 1: キャンセル）
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mark</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                            >string</a
-                          >
-                          = <code>null</code>)</code
-                        >
-                        マーク（'good', 'ok', 'smile', 'sad'）
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientviewreceivers">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">viewReceivers(mDBID, mDID)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L264-L284"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>宛先を取得する</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    viewReceivers(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >):
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a
-                    >&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object"
-                      >Object</a
-                    >>
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Returns</div>
-                  <code
-                    ><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a
-                    >&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object"
-                      >Object</a
-                    >></code
-                  >: result 宛先リスト
-
-                  <div class="py1 quiet mt1 prose-big">Returns</div>
-                  <code
-                    ><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    ></code
-                  >: result.uID - UID
-
-                  <div class="py1 quiet mt1 prose-big">Returns</div>
-                  <code
-                    ><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String"
-                      >string</a
-                    ></code
-                  >: result.userName - ユーザ名
-                </section>
-              </div>
-            </div>
-
-            <div class="border-bottom" id="messageclientmodifyreceivers">
-              <div class="clearfix small pointer toggle-sibling">
-                <div class="py1 contain">
-                  <a class="icon pin-right py1 dark-link caret-right">▸</a>
-                  <span class="code strong strong truncate">modifyReceivers(mDBID, mDID, eID, uidList)</span>
-                </div>
-              </div>
-              <div class="clearfix display-none toggle-target">
-                <section class="p2 mb2 clearfix bg-white minishadow">
-                  <div class="clearfix">
-                    <a
-                      class="fr fill-darken0 round round pad1x quiet h5"
-                      href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/blob/590dab4d5c9bd92c4317aefc90b38529aa8ecccb/src/page/MessageClient.js#L294-L308"
-                    >
-                      <span>src/page/MessageClient.js</span>
-                    </a>
-                  </div>
-
-                  <p>宛先を修正する</p>
-
-                  <div class="pre p1 fill-light mt0">
-                    modifyReceivers(mDBID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, mDID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, eID:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >, uidList:
-                    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a
-                    >&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                      >number</a
-                    >>)
-                  </div>
-
-                  <div class="py1 quiet mt1 prose-big">Parameters</div>
-                  <div class="prose">
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDBID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        mDBID(0~9)
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">mDID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        MID 用のID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">eID</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >)</code
-                        >
-                        EID 用のID
-                      </div>
-                    </div>
-
-                    <div class="space-bottom0">
-                      <div>
-                        <span class="code bold">uidList</span>
-                        <code class="quiet"
-                          >(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array"
-                            >Array</a
-                          >&#x3C;<a
-                            href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number"
-                            >number</a
-                          >>)</code
-                        >
-                        宛先 UID リスト
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-    <script src="assets/anchor.js"></script>
-    <script src="assets/split.js"></script>
-    <script src="assets/site.js"></script>
-  </body>
-</html>
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>cybozu-office-10-sdk-gas</title><meta name="description" content="Documentation for cybozu-office-10-sdk-gas"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">cybozu-office-10-sdk-gas</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>cybozu-office-10-sdk-gas</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><p><a href="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/actions?workflow=CI"><img src="https://github.com/nimzo6689/cybozu-office-10-sdk-gas/workflows/CI/badge.svg" alt="CI Status"></a></p>
+
+<a href="#cybozu-office-10-sdk-for-google-apps-script" id="cybozu-office-10-sdk-for-google-apps-script" style="color: inherit; text-decoration: none;">
+  <h1>Cybozu Office 10 SDK for Google Apps Script</h1>
+</a>
+
+<a href="#概要" id="概要" style="color: inherit; text-decoration: none;">
+  <h2>概要</h2>
+</a>
+<p>Google Apps Script で動作するサイボウズ Office 10 用の SDK です。</p>
+
+<a href="#使い方" id="使い方" style="color: inherit; text-decoration: none;">
+  <h2>使い方</h2>
+</a>
+<p>以下の Script ID で公開しています。</p>
+<p>Script ID: <code>1lL-Cy5zFVjxDNzwtjuKxi22VtSNU6bSOodSrxSHeqkKCwJa2E8QrirL0</code></p>
+<p>以下 Google Apps Script エディタ内でライブラリの参照名を <code>CybozuOfficeSDK</code> とした場合の実装例です。</p>
+<pre><code class="language-js"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">loginId</span><span class="hl-1"> = </span><span class="hl-3">&#39;xxxxxxx&#39;</span><span class="hl-1">;</span><br/><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">password</span><span class="hl-1"> = </span><span class="hl-3">&#39;xxxxxxx&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">cybozuOffice</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-4">CybozuOfficeSDK</span><span class="hl-1">.</span><span class="hl-5">CybozuOffice</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;https://test.cybozu.info/scripts/office10/ag.cgi&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">loginId</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">password</span><br/><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#「ユーザー名簿」のグループメンバーの取得" id="「ユーザー名簿」のグループメンバーの取得" style="color: inherit; text-decoration: none;">
+  <h3>「ユーザー名簿」のグループメンバーの取得</h3>
+</a>
+<pre><code class="language-js"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">GID</span><span class="hl-1"> = </span><span class="hl-6">1111</span><span class="hl-1">;</span><br/><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">members</span><span class="hl-1"> = </span><span class="hl-4">cybozuOffice</span><span class="hl-1">.</span><span class="hl-4">user</span><span class="hl-1">.</span><span class="hl-5">index</span><span class="hl-1">(</span><span class="hl-2">GID</span><span class="hl-1">);</span><br/><br/><span class="hl-4">members</span><span class="hl-1">.</span><span class="hl-5">forEach</span><span class="hl-1">(</span><span class="hl-4">m</span><span class="hl-1"> </span><span class="hl-0">=&gt;</span><span class="hl-1"> </span><span class="hl-3">`ユーザーID: </span><span class="hl-0">${</span><span class="hl-4">m</span><span class="hl-7">.</span><span class="hl-4">uID</span><span class="hl-0">}</span><span class="hl-3">, ユーザ名: </span><span class="hl-0">${</span><span class="hl-4">m</span><span class="hl-7">.</span><span class="hl-4">userName</span><span class="hl-0">}</span><span class="hl-3">`</span><span class="hl-1">);</span>
+</code></pre>
+
+<a href="#サポート機能一覧" id="サポート機能一覧" style="color: inherit; text-decoration: none;">
+  <h2>サポート機能一覧</h2>
+</a>
+<p>:heavy_check_mark: ・・・ サポート済み<br>:x: ・・・ 未サポート<br>- 　・・・ 存在しない機能</p>
+<table>
+<thead>
+<tr>
+<th>機能</th>
+<th>作成</th>
+<th>詳細</th>
+<th>編集</th>
+<th>削除</th>
+<th>一覧</th>
+<th>検索</th>
+<th>フォルダの移動</th>
+<th>ファイルのダウンロード</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>個人フォルダ &gt; フォルダ</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:heavy_check_mark:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+</tr>
+<tr>
+<td>個人フォルダ &gt; メッセージ</td>
+<td>:heavy_check_mark:</td>
+<td>:x:</td>
+<td>:heavy_check_mark:</td>
+<td>:heavy_check_mark:</td>
+<td>-</td>
+<td>:x:</td>
+<td>:heavy_check_mark:</td>
+<td>-</td>
+</tr>
+<tr>
+<td>個人フォルダ &gt; メッセージ &gt; リアクション</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>個人フォルダ &gt; メッセージ &gt; 宛先</td>
+<td>-</td>
+<td>:heavy_check_mark:</td>
+<td>:heavy_check_mark:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>個人フォルダ &gt; メッセージ &gt; 更新通知</td>
+<td>-</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>個人フォルダ &gt; メッセージ &gt; コメント</td>
+<td>:heavy_check_mark:</td>
+<td>:heavy_check_mark:</td>
+<td>-</td>
+<td>:heavy_check_mark:</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>個人フォルダ &gt; メッセージ &gt; コメント &gt; リアクション</td>
+<td>:heavy_check_mark:</td>
+<td>-</td>
+<td>-</td>
+<td>:heavy_check_mark:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>掲示板 &gt; 掲示</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+</tr>
+<tr>
+<td>掲示板 &gt; 掲示 &gt; リアクション</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>掲示板 &gt; 掲示 &gt; 更新通知</td>
+<td>-</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>掲示板 &gt; 掲示 &gt; コメント</td>
+<td>:heavy_check_mark:</td>
+<td>:x:</td>
+<td>-</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>掲示板 &gt; 掲示 &gt; コメント &gt; リアクション</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ファイル管理 &gt; フォルダ</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ファイル管理 &gt; フォルダ &gt; 更新通知</td>
+<td>-</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ファイル管理 &gt; ファイル</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>ユーザ名簿 &gt; ユーザー情報</td>
+<td>-</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+<td>:heavy_check_mark:</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>スケジュール &gt; 予定</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>:x:</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<a href="#その他" id="その他" style="color: inherit; text-decoration: none;">
+  <h2>その他</h2>
+</a>
+<p><a href="https://nimzo6689.github.io/cybozu-office-10-sdk-gas/">API ドキュメント</a></p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/CybozuOffice.html" class="tsd-kind-icon">Cybozu<wbr/>Office</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
