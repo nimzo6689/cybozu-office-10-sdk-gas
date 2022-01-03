@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Cybozu Office 10 SDK for Google Apps Script",
   "scripts": {
+    "postinstall": "replace-in-file \"declare var console\" \"//declare var console\" node_modules/@types/google-apps-script/google-apps-script.base.d.ts",
     "build": "webpack",
     "watch": "webpack -w",
     "test": "jest",
@@ -31,6 +32,7 @@
     "@types/jest": "^27.4.0",
     "gas-webpack-plugin": "^2.0.2",
     "jest": "^27.0.6",
+    "replace-in-file": "^6.3.2",
     "ts-jest": "^27.1.2",
     "ts-loader": "^9.2.6",
     "typedoc": "^0.22.10",
