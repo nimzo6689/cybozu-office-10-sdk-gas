@@ -15,6 +15,14 @@ export default class CybozuTransport extends LoadReductionCallable {
     return 'cybozu_session';
   }
 
+  /**
+   * CybozuTransport コンストラクタ関数
+   *
+   * @param baseUrl      - 処理対象となるサイボウズのURL（http~/ag.cgiまで）
+   * @param accountId    - ログインID
+   * @param password     - パスワード
+   * @param sleepSec     - スリープ間隔（秒）
+   */
   constructor(baseUrl: string, accountId: string, password: string, sleepSec: number) {
     super(sleepSec);
     this._baseUrl = baseUrl;
@@ -28,6 +36,12 @@ export default class CybozuTransport extends LoadReductionCallable {
     }
   }
 
+  /**
+   * GET リクエスト用のエントリポイント
+   *
+   * @param query - リクエストクエリ文字列
+   * @return RAW コンテント文字列
+   */
   get(query: string | {} = null): string {
     return this._call({
       method: 'get',
@@ -35,6 +49,14 @@ export default class CybozuTransport extends LoadReductionCallable {
     }).getContentText();
   }
 
+  /**
+   * ファイルの GET リクエスト用のエントリポイント
+   *
+   * @param path - パス（ファイル名）
+   * @param query - リクエストクエリ文字列
+   * @param encoding - エンコード形式
+   * @return RAW コンテント文字列
+   */
   getFile(path: string, query: string, encoding: string): string {
     return this._call({
       method: 'get',
@@ -46,6 +68,11 @@ export default class CybozuTransport extends LoadReductionCallable {
       .trim();
   }
 
+  /**
+   * POST リクエスト用のエントリポイント
+   *
+   * @param body - HTTP リクエストの Body
+   */
   post(body: string) {
     this._call({
       method: 'post',
@@ -82,6 +109,8 @@ export default class CybozuTransport extends LoadReductionCallable {
   }
 
   /**
+   * @param headers - ヘッダー情報
+   * @thrwos サイボウズのエラーコードをスローする
    * {@link https://jp.cybozu.help/ja/error/of10/ サイボウズ Office 10 エラーメッセージ一覧}
    */
   _handleErrorResponse(headers: object) {
@@ -92,6 +121,13 @@ export default class CybozuTransport extends LoadReductionCallable {
     }
   }
 
+  /**
+   * サイボウズ Office10 にアクセスするために必要な認証情報を取得する。
+   * なお、取得した認証情報は CacheService.CYBOZU_SESSION_KEY へ格納する。
+   *
+   * @param accountId    - ログインID
+   * @param password     - パスワード
+   */
   _renewLoginSession(accountId: string, password: string) {
     console.info('Renewing Login Session');
 

@@ -10,6 +10,11 @@ export default class UserClient {
   _pagePrefix: string;
   _transport: CybozuTransport;
 
+  /**
+   * CybozuOffice コンストラクタ関数
+   *
+   * @param transport  - サイボウズOffice10への通信オブジェクト
+   */
   constructor(transport: CybozuTransport) {
     this._pagePrefix = 'UserList';
     this._transport = transport;
@@ -17,6 +22,9 @@ export default class UserClient {
 
   /**
    * グループ ID に所属する UID リストの取得
+   *
+   * @param gid - グループID
+   * @return 所属ユーザの UID リスト
    */
   index(gid: number): { uID: number }[] {
     const query = {

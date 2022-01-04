@@ -12,6 +12,11 @@ export default class MessageClient {
   _pagePrefix: string;
   _transport: CybozuTransport;
 
+  /**
+   * CybozuOffice コンストラクタ関数
+   *
+   * @param transport  - サイボウズOffice10への通信オブジェクト
+   */
   constructor(transport: CybozuTransport) {
     this._pagePrefix = 'MyFolderMessage';
     this._transport = transport;
@@ -19,6 +24,14 @@ export default class MessageClient {
 
   /**
    * メッセージの送信
+   *
+   * @param subject              - 標題
+   * @param data                 - コメント文
+   * @param uidList              - 宛先 UID リスト
+   * @param group                - コメントする際に表示されるグループ名
+   * @param editableByReceivers  - 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
+   * @param useConfirm           - 閲覧状況を確認する（0: 無効, 1: 有効）
+   * @param simpleReplyEnable    - リアクションを許可する（0: 無許可, 1: 許可）
    */
   send(
     subject: string,
@@ -57,6 +70,10 @@ export default class MessageClient {
 
   /**
    * メッセージの移動
+   *
+   * @param mDBID                - mDBID(0~9)
+   * @param mDID                 - MID 用の ID
+   * @param pID                  - PID 用の ID
    */
   move(mDBID: number, mDID: number, pID: number) {
     const body = {
@@ -73,6 +90,11 @@ export default class MessageClient {
 
   /**
    * コメントを取得する
+   *
+   * @param mDBID - mDBID(0~9)
+   * @param mDID  - MID 用のID
+   * @param hID   - OFFSET となる Follow ID
+   * @return コメントリスト
    */
   viewFollows(mDBID: number, mDID: number, hID: number = null): Array<any> {
     const query = {
@@ -110,6 +132,15 @@ export default class MessageClient {
 
   /**
    * メッセージの編集
+   *
+   * @param mDBID                - mDBID(0~9)
+   * @param mDID                 - MID 用のID
+   * @param subject              - 標題
+   * @param data                 - コメント文
+   * @param group                - コメントする際に表示されるグループ名
+   * @param editableByReceivers  - 宛先のユーザーにメッセージの変更を許可する（0: 無許可, 1: 許可）
+   * @param useConfirm           - 閲覧状況を確認する（0: 無効, 1: 有効）
+   * @param simpleReplyEnable    - リアクションを許可する（0: 無許可, 1: 許可）
    */
   modify(
     mDBID: number,
@@ -141,6 +172,9 @@ export default class MessageClient {
 
   /**
    * メッセージの削除
+   *
+   * @param mDBID                - mDBID(0~9)
+   * @param mDID                 - MID 用のID
    */
   delete(mDBID: number, mDID: number) {
     const body = {
@@ -157,6 +191,11 @@ export default class MessageClient {
 
   /**
    * コメントを書き込む
+   *
+   * @param mDBID - mDBID(0~9)
+   * @param mDID  - MID 用のID
+   * @param data  - コメント文
+   * @param group - グループ名
    */
   addFollow(mDBID: number, mDID: number, data: string, group: string = Consts.DEFAULT_GROUP_NAME) {
     const body = {
@@ -174,6 +213,10 @@ export default class MessageClient {
 
   /**
    * コメントを削除する
+   *
+   * @param mDBID     - mDBID(0~9)
+   * @param mDID      - MID 用のID
+   * @param followId  - follow ID
    */
   deleteFollow(mDBID: number, mDID: number, followId: number) {
     const body = {
@@ -189,6 +232,12 @@ export default class MessageClient {
 
   /**
    * いいね！
+   *
+   * @param mDBID     - mDBID(0~9)
+   * @param mDID      - MID 用のID
+   * @param followId  - follow ID
+   * @param cancel    - キャンセルフラグ（0: 正常、 1: キャンセル）
+   * @param mark      - マーク（'good', 'ok', 'smile', 'sad'）
    */
   replySimple(mDBID: number, mDID: number, followId: number, cancel: number = 0, mark: string = null) {
     const body = {
@@ -208,6 +257,10 @@ export default class MessageClient {
 
   /**
    * 宛先を取得する
+   *
+   * @param mDBID - mDBID(0~9)
+   * @param mDID  - MID 用のID
+   * @return result 宛先リスト
    */
   viewReceivers(mDBID: number, mDID: number): object[] {
     const query = {
@@ -233,6 +286,11 @@ export default class MessageClient {
 
   /**
    * 宛先を修正する
+   *
+   * @param mDBID     - mDBID(0~9)
+   * @param mDID      - MID 用のID
+   * @param eID       - EID 用のID
+   * @param uidList - 宛先 UID リスト
    */
   modifyReceivers(mDBID: number, mDID: number, eID: number, uidList: number[]) {
     const uidPairs = uidList.map(uid => `UID=${uid}`).join('&');
