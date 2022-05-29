@@ -10,7 +10,7 @@ export default class BulletinClient {
   _transport: CybozuTransport;
 
   /**
-   * CybozuOffice コンストラクタ関数
+   * BulletinClient コンストラクタ関数
    *
    * @param transport  - サイボウズOffice10への通信オブジェクト
    */

@@ -1,16 +1,9 @@
 {
-  "compileOnSave": false,
-  "buildOnSave": false,
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es6",
     "module": "commonjs",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "outDir": "dist",
-    "noImplicitAny": false,
-    "declaration": true
+    "declaration": true,
+    "outDir": "dist"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["__tests__/**/*.spec.ts"]

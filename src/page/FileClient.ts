@@ -9,7 +9,7 @@ export default class FileClient {
   _transport: CybozuTransport;
 
   /**
-   * CybozuOffice コンストラクタ関数
+   * FileClient コンストラクタ関数
    *
    * @param transport  - サイボウズOffice10への通信オブジェクト
    */

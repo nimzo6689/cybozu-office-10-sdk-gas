@@ -11,7 +11,7 @@ export default class UserClient {
   _transport: CybozuTransport;
 
   /**
-   * CybozuOffice コンストラクタ関数
+   * UserClient コンストラクタ関数
    *
    * @param transport  - サイボウズOffice10への通信オブジェクト
    */
@@ -38,8 +38,12 @@ export default class UserClient {
     return $('table.dataList tr > td:nth-child(1)  a')
       .map((_: any, elem: any) => {
         const parsed = $(elem);
+        const matchedUID = parsed?.attr('href')?.match(/(?<=uid=)[0-9]+/i);
+        if (!matchedUID) {
+          return null;
+        }
         return {
-          uID: Number(parsed.attr('href').match(/(?<=uid=)[0-9]+/i)[0]),
+          uID: Number(matchedUID[0]),
           userName: parsed.text(),
         };
       })

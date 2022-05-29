@@ -34,7 +34,7 @@ export default class FolderClient {
     const document = this._transport.get(query);
     const rawMessages = document.toString().match(/(?<=MyFolderMessageView).*?(?=profileImage)/gis);
 
-    return rawMessages.map(rawHtml => ({
+    return rawMessages?.map(rawHtml => ({
       mDBID: rawHtml.match(/mDBID=(\d+)/i) ? Number(rawHtml.match(/mDBID=(\d+)/i)[1]) : null,
       mDID: rawHtml.match(/mDID=(\d+)/i) ? Number(rawHtml.match(/mDID=(\d+)/i)[1]) : null,
       subject: rawHtml.match(/(?<=clip8x16.png\" align=absmiddle>).*?(?=<\/a>)/i)[0],

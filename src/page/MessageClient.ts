@@ -13,7 +13,7 @@ export default class MessageClient {
   _transport: CybozuTransport;
 
   /**
-   * CybozuOffice コンストラクタ関数
+   * MessageClient コンストラクタ関数
    *
    * @param transport  - サイボウズOffice10への通信オブジェクト
    */
@@ -96,7 +96,7 @@ export default class MessageClient {
    * @param hID   - OFFSET となる Follow ID
    * @return コメントリスト
    */
-  viewFollows(mDBID: number, mDID: number, hID: number = null): Array<any> {
+  viewFollows(mDBID: number, mDID: number, hID: number | null = null): Array<any> {
     const query = {
       page: `Ajax${this._pagePrefix}FollowNavi`,
       DBID: mDBID,
@@ -114,14 +114,21 @@ export default class MessageClient {
         const parsed = $(el);
 
         const attached = parsed.find('.vr_viewContentsAttach td:first-child a').attr('href');
-        let _: any, attachedFile: string, attachedQuery: string;
+        let _: any,
+          attachedFile: string | null = null,
+          attachedQuery: string | null = null;
         if (attached) {
           [_, attachedFile, attachedQuery] = attached.split(/[/?]/);
           attachedQuery = attachedQuery.replace(/&amp;/gi, '&');
         }
 
+        const matchedFollowId = parsed?.attr('id')?.match(/(?<=follow-root-)[0-9]+/i);
+        if (!matchedFollowId) {
+          return null;
+        }
+
         return {
-          followId: Number(parsed.attr('id').match(/(?<=follow-root-)[0-9]+/i)[0]),
+          followId: Number(matchedFollowId[0]),
           userName: parsed.find('.vr_followUserName').text(),
           attachedFile: attachedFile,
           attachedQuery: attachedQuery,

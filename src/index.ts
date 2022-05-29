@@ -23,11 +23,9 @@ export class CybozuOffice {
    * @param baseUrl        - 処理対象となるサイボウズのURL（http~/ag.cgiまで）
    * @param accountId      - ログインID
    * @param password       - パスワード
-   * @param sleepSec       - スリープ間隔（秒）
    */
-  constructor(baseUrl: string, accountId: string, password: string, sleepSec: number = 1) {
-    this._transport = new CybozuTransport(baseUrl, accountId, password, sleepSec);
-
+  constructor(baseUrl: string, accountId: string, password: string) {
+    this._transport = new CybozuTransport(baseUrl, accountId, password, 0);
     this.message = new MessageClient(this._transport);
     this.file = new FileClient(this._transport);
     this.user = new UserClient(this._transport);
@@ -35,5 +33,3 @@ export class CybozuOffice {
     this.bulletin = new BulletinClient(this._transport);
   }
 }
-
-global.CybozuOffice = CybozuOffice;
