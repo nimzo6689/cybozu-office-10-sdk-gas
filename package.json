@@ -8,6 +8,8 @@
     "build": "tsc",
     "test": "jest",
     "test:jest:cov": "npm run test -- --coverage",
+    "lint": "prettier 'src/**/*.ts' && eslint 'src/**/*.ts'",
+    "lint:fix": "prettier --write 'src/**/*.ts' && eslint --fix 'src/**/*.ts'",
     "doc": "typedoc -entryPointStrategy expand --out ./docs/ ./src/"
   },
   "repository": {
@@ -31,12 +33,19 @@
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
     "jest": "^27.0.6",
+    "prettier": "^2.6.2",
     "replace-in-file": "^6.3.2",
     "ts-jest": "^27.1.2",
     "ts-loader": "^9.2.6",
     "typedoc": "^0.22.10",
     "typescript": "^4.5.4"
+  },
+  "lint-staged": {
+    "src/*.{js,ts}": "eslint --cache --fix",
+    "src/*.{js,ts,md}": "prettier --write"
   },
   "private": false
 }
