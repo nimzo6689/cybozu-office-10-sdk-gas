@@ -5,6 +5,17 @@ import MessageClient from '../src/page/MessageClient';
 describe('メッセージ', () => {
   const page_MyFolderIndex_rawContent = fs.readFileSync(`${__dirname}/resources/page_MyFolderMessageView.rawContent`);
 
+  it('メッセージの送信', () => {
+    const CybozuTransportMock = jest.fn().mockImplementation(() => {
+      return {
+        post: (x = '') => {},
+      };
+    });
+    const client = new MessageClient(new CybozuTransportMock());
+
+    client.send('タイトル', '本文', [1], 'グループ', 1, 0, 1);
+  });
+
   it('メッセージのコメントが取得できるか', () => {
     const CybozuTransportMock = jest.fn().mockImplementation(() => {
       return {
@@ -38,6 +49,22 @@ describe('メッセージ', () => {
         attachedQuery: undefined,
       },
     ];
+
+    expect(JSON.stringify(actual)).toBe(JSON.stringify(expected));
+  });
+
+  it('宛先リストを取得する', () => {
+    const CybozuTransportMock = jest.fn().mockImplementation(() => {
+      return {
+        get: (x = '') => {
+          return page_MyFolderIndex_rawContent;
+        },
+      };
+    });
+    const client = new MessageClient(new CybozuTransportMock());
+
+    const actual = client.viewReceivers(4, 4);
+    const expected = [];
 
     expect(JSON.stringify(actual)).toBe(JSON.stringify(expected));
   });
