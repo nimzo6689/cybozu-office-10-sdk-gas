@@ -1,5 +1,6 @@
 import Consts from './Constants';
 import { LoadReductionCallable, Utils } from './Helpers';
+const jschardet = require('jschardet');
 
 /**
  *  Cybozu Office 10 の操作を簡単にするための UrlFetchApp のラッパークラスです。
@@ -57,15 +58,26 @@ export default class CybozuTransport extends LoadReductionCallable {
    * @param encoding - エンコード形式
    * @return RAW コンテント文字列
    */
-  getFile(path: string, query: string, encoding: string): string {
-    return this._call({
+  getFile(path: string, query: string, encoding?: string): string {
+    const content = this._call({
       method: 'get',
       path: path,
       query: query,
-    })
-      .getBlob()
-      .getDataAsString(encoding)
-      .trim();
+    }).getBlob();
+
+    if (!encoding) {
+      switch (jschardet.detect(content.getDataAsString()).encoding) {
+        case 'SHIFT_JIS':
+        case 'EUC-JP':
+        case 'ISO-2022-JP':
+        case 'windows-1252':
+          encoding = Consts.SHIFT_JIS;
+          break;
+        default:
+          encoding = Consts.UTF_8;
+      }
+    }
+    return content.getDataAsString(encoding).trim();
   }
 
   /**

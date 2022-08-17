@@ -1,4 +1,3 @@
-import Consts from '../common/Constants';
 import CybozuTransport from '../common/Transport';
 
 /**
@@ -25,7 +24,7 @@ export default class FileClient {
    * @param encoding  - 文字コード（utf-8, Shift_JIS）
    * @return ファイルのコンテント
    */
-  download(fileName: string, query: string, encoding: string = Consts.UTF_8): string {
+  download(fileName: string, query: string, encoding?: string): string {
     return this._transport.getFile(fileName, query, encoding);
   }
 }
