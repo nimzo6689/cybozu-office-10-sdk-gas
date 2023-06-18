@@ -102,6 +102,7 @@ export default class CybozuTransport extends LoadReductionCallable {
         Cookie: this._session.cookie,
       },
       followRedirects: false,
+      validateHttpsCertificates: false,
     };
     if (contentType) {
       params['contentType'] = contentType;
@@ -152,6 +153,7 @@ export default class CybozuTransport extends LoadReductionCallable {
       contentType: Consts.X_WWW_FORM_URLENCODED,
       // UrlFetchApp::fetch では、リダイレクト先にセッション情報が連携されないため、リダイレクトは無効にする必要がある。
       followRedirects: false,
+      validateHttpsCertificates: false,
     });
 
     const headers = loginResponse.getAllHeaders();
