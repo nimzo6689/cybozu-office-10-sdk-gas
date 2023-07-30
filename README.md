@@ -11,7 +11,7 @@ Google Apps Script で動作するサイボウズ Office 10 用の SDK です。
 
 以下の Script ID で公開しています。
 
-Script ID: `1ZEsZAlIF_N11hZTD13DVpTgY_zNnqwTJOE0aVqPK7Xy-ZvLu91XVwNbT`
+Script ID: `1V3r6qCHaptAKZ1Q4NB1zOdirvycuYq_5BkdZNOb5Azj94Q_RNAGYGBD5`
 
 以下 Google Apps Script エディタ内でライブラリの参照名を `CybozuOfficeSDK` とした場合の実装例です。
 
