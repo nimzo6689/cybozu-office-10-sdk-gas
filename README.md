@@ -35,12 +35,142 @@ const members = cybozuOffice.user.index(GID);
 members.forEach(m => `ユーザーID: ${m.uID}, ユーザ名: ${m.userName}`);
 ```
 
+## ローカル環境で使用する方法
+
+ローカル環境で開発している GAS プロジェクトでこちらの SDK を利用したい場合、  
+以下の手順で対応できます。  
+
+※ 上の Script ID は使わず、ご自身でこのプロジェクトをビルドして  
+Google Apps Scripts で公開したい場合も同じ要領で対応可能です。  
+
+```bash
+git clone https://github.com/nimzo6689/cybozu-office-10-sdk-gas.git
+cd cybozu-office-10-sdk-gas
+
+npm install
+npm build
+
+cd ..
+mkdir cybozu-office-10-sdk-gas-deploy
+cd cybozu-office-10-sdk-gas-deploy
+
+cat << 'EOF' > package.json
+{
+  "name": "cybozu-office-10-sdk-gas-deploy",
+  "version": "1.0.0",
+  "description": "",
+  "mode": "none",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gas-webpack-plugin": "^2.2.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.2",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "@google/clasp": "^2.4.2" 
+  },
+  "private": true,
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.47",
+    "cybozu-office-10-sdk-gas": "^1.0.0"
+  }
+}
+EOF
+
+cat << 'EOF' > webpack.config.js
+const GasPlugin = require('gas-webpack-plugin');
+
+module.exports = {
+  mode: 'none',
+  entry: `./src/index.ts`,
+  output: {
+    path: `${__dirname}/dist`,
+    filename: 'index.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  plugins: [new GasPlugin()],
+};
+EOF
+
+cat << 'EOF' > tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": false,
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["__tests__/**/*.spec.ts"]
+}
+EOF
+
+mkdir -p src
+
+# CybozuOffice を global に初期化してますが、
+# GAS の IDE 上で CybozuOffice を直接参照しない場合、この文は不要です。
+cat << 'EOF' > src/index.ts
+import { CybozuOffice } from 'cybozu-office-10-sdk-gas';
+
+(global as any).CybozuOffice = CybozuOffice;
+EOF
+
+## https://script.new にアクセスして新規の Google Apps Script プロジェクトを作成し、
+## URL から scriptId を取り出し、以下で生成する .clasp.json に記載する。 
+## プロジェクトの名前も付けておくと後で確認しやすい。
+
+cat << EOF > .clasp.json
+{
+  "scriptId": "",
+  "rootDir": "dist",
+  "fileExtension": "js"
+}
+EOF
+
+mkdir -p dist
+
+cat << 'EOF' > dist/appsscript.json
+{
+  "timeZone": "Asia/Tokyo",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
+EOF
+
+npm install
+npm link ../cybozu-office-10-sdk-gas
+npm run build
+
+npx clasp login
+
+npx clasp push
+```
+
 ## サポート機能一覧
+
+SDK でサポートできている機能の一覧です。  
+※ 正直、 x を今後対応させる予定はありません。  
 
 o ・・・ サポート済み  
 x ・・・ 未サポート  
-\- 　・・・ 存在しない機能
-
+\- 　・・・ 存在しない機能  
+  
 | 機能 | 作成 | 詳細 | 編集 | 削除 | 一覧 | 検索 | フォルダの移動 | ファイルのダウンロード |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | 個人フォルダ > フォルダ | x | x | x | x | o | x  | x | - |
