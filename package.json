@@ -1,6 +1,6 @@
 {
   "name": "cybozu-office-10-sdk-gas",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Cybozu Office 10 SDK for Google Apps Script",
   "main": "dist/index.js",
   "scripts": {
