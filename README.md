@@ -16,11 +16,11 @@ Script ID: `1V3r6qCHaptAKZ1Q4NB1zOdirvycuYq_5BkdZNOb5Azj94Q_RNAGYGBD5`
 以下 Google Apps Script エディタ内でライブラリの参照名を `CybozuOfficeSDK` とした場合の実装例です。
 
 ```js
-const loginId = 'xxxxxxx';
-const password = 'xxxxxxx';
+const loginId = '17';
+const password = '';
 
 const cybozuOffice = new CybozuOfficeSDK.CybozuOffice(
-  'https://test.cybozu.info/scripts/office10/ag.cgi',
+  'https://onlinedemo.cybozu.info/scripts/office10/ag.cgi',
   loginId,
   password
 );
@@ -29,10 +29,10 @@ const cybozuOffice = new CybozuOfficeSDK.CybozuOffice(
 ### 「ユーザー名簿」のグループメンバーの取得
 
 ```js
-const GID = 1111;
+const GID = 13;
 const members = cybozuOffice.user.index(GID);
 
-members.forEach(m => `ユーザーID: ${m.uID}, ユーザ名: ${m.userName}`);
+members.forEach(m => console.log(`ユーザーID: ${m.uID}, ユーザ名: ${m.userName}`));
 ```
 
 ## ローカル環境で使用する方法
