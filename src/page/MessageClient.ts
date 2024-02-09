@@ -117,7 +117,7 @@ export default class MessageClient {
         let _: any, attachedFile: string, attachedQuery: string;
         if (attached) {
           [_, attachedFile, attachedQuery] = attached.split(/[/?]/);
-          attachedQuery = attachedQuery.replace(/&amp;/gi, '&');
+          attachedQuery = attachedQuery ? attachedQuery.replace(/&amp;/gi, '&') : '';
         }
 
         const matchedFollowId = parsed?.attr('id')?.match(/(?<=follow-root-)[0-9]+/i);
